@@ -21,21 +21,24 @@
   }
   
   .navbar .logo img {
-    padding-left: 10px;
+    padding-left: 15px;
     display: block;
-    max-height: 30px;
+    max-height: 35px;
   }
   
   /* Navbar link styles */
   .nav-links {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    font-weight: 450;
     list-style: none; /* Removes bullets */
     display: flex;
-    margin-right: 150px;
+    margin-right: 0px;
   }
   
   .nav-links li {
-    margin-left: 1.5rem; /* Spacing between links */
-    margin-right: 1.5rem;
+    margin-left: 2.0rem; /* Spacing between links */
+    margin-right: 2.0rem;
   }
   
   .nav-links a {
