@@ -230,7 +230,7 @@ body {
   font-optical-sizing: auto;
   color: #FFF9E0;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
   line-height: 1.4;
@@ -239,7 +239,7 @@ body {
 
 .news-card p {
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #b3b3b3; /* Lighter gray for metadata */
 }
 
@@ -271,66 +271,96 @@ body {
 
 /* HOW IT WORKS section CSS */
 .how-it-works {
-  padding: 2rem;
-  background-color: #0f172a;
-  color: #fff;
+  padding: 40px 100px; /* Top/Bottom padding and default side padding */
+  background: url('../assets/background/howitworkBG.svg') no-repeat right center, 
+  url('../assets/background/indexBG.png') no-repeat center;
+  background-size: 20%, cover; /* SVG is contained, PNG covers the section */
+  color: #F1F1F1;
+  display: flex;
+  flex-direction: column; /* Aligns title and content vertically */
+  align-items: flex-start; /* Aligns everything to the left */
 }
 
 .how-it-works h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  padding-left: 3rem; /* Consistent left padding */
 }
 
 .accordion {
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%; /* Takes full width of the section */
+  padding-left: 4rem; /* Matches the left alignment of the title */
 }
 
 .accordion-item {
-  margin-bottom: 1rem;
-  border: 1px solid #334155;
-  border-radius: 0.5rem;
-  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .accordion-header {
-  width: 100%;
-  background-color: #1e293b;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the button and text */
   font-size: 1.2rem;
-  padding: 1rem;
-  text-align: left;
+  font-weight: 350;
   cursor: pointer;
-  border: none;
-  outline: none;
-  font-weight: bold;
 }
 
-.accordion-header:hover {
-  background-color: #334155;
+.circle-arrow-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.circle-arrow-btn img {
+  width: 30px;
+  height: 30px;
 }
 
 .accordion-content {
+  margin-left: 2.5rem; /* Indents sub-content relative to the header */
   max-height: 0;
+  max-width: 55%;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background-color: #1e293b;
-  padding: 0 1rem;
-}
-
-.accordion-content ul {
-  list-style-type: disc;
-  padding: 1rem;
-}
-
-.accordion-content li {
-  margin: 0.5rem 0;
-  line-height: 1.5;
 }
 
 .accordion-content.open {
-  max-height: 200px; /* Adjust based on content height */
+  max-height: 500px; /* Adjusted to show content when opened */
+}
+
+.accordion-content h4{
+  font-size: 1.3rem;
+}
+
+.accordion-content a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #F1F1F1;
+}
+
+.accordion-content ul {
+  font-size: 1.1rem;
+  list-style: none;
+  padding: 0 20px;
+}
+
+.accordion-content ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.accordion-content ul li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #F1F1F1;
 }
 
 
