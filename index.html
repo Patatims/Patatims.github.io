@@ -63,24 +63,6 @@
     </div>
   </section>
 
-    <!-- Floating Section with Links -->
-     <!--
-<section class="topics">
-    <div class="container">
-      <div class="topic">
-        <img src="/assets/icons/question.png" alt="what is ClickSmart">
-        <h2>What is ClickSmart for?</h2>
-        <a href="#clicksmart-for" class="learn-more">Learn more</a>
-      </div>
-      <div class="topic">
-        <img src="/assets/icons/how.png" alt="how it works?">
-        <h2>How does ClickSmart Work?</h2>
-        <a href="#clicksmart-work" class="learn-more">Learn more</a>
-      </div>
-    </div>
-  </section>-->
-
-
   <!-- New Content Section: What is ClickSmart for? -->
 <section id="clicksmart-for" class="clicksmart-info">
     <div class="container">
@@ -95,6 +77,7 @@
       </div>
     </div>
   </section>
+
 
 <!-- News and Articles Section -->
 <section id="news-articles" class="news-section">
@@ -149,21 +132,58 @@
 </section>
 
 
-<!-- New Content Section: How does ClickSmart Work? 
-<section id="clicksmart-work" class="clicksmart-work">
-    <div class="container">
-      <div class="clicksmart-left">
-        <h2>How does ClickSmart Work?</h2>
-        <p class="p1"> At the heart of the platform is an AI-powered chatbot that provides instant answers to your cybersecurity questions, helping you identify common cyber threats and guiding you through the process of reporting incidents. Whether you need to know how to recognize a phishing attempt or how to contact the Philippine National Police Anti-Cybercrime Group, the chatbot is here to assist 24/7.</p>
-
-        <p class="p2">In addition to the chatbot, ClickSmart offers educational resources, including the news on cybercrime trends, local cybercrime statistics, offline pdf copy of the cybercrime guide, and assessment to test your knowledge on cybercrime or what you learn in this website. The website also provides practical tips for safeguarding your online presence and access to tools that simplify reporting cybercrime.</p>
-      </div>
-      <div class="clicksmart-right">
-        <img src="assets/manwithbot.png" alt="Cybercrime Awareness">
+<!-- New Content Section: How it Works? -->
+<section class="how-it-works">
+  <h2>Here's how it works:</h2>
+  <div class="accordion">
+    <!-- Learn Section -->
+    <div class="accordion-item">
+      <button class="accordion-header">LEARN:</button>
+      <div class="accordion-content">
+        <ul>
+          <li>Understand the Threats</li>
+          <li>Interactive Chatbot Assistance: Quick answers or guidance 24/7.</li>
+          <li>Access examples and scenarios to learn how cybercriminals operate.</li>
+        </ul>
       </div>
     </div>
-  </section>
--->
+    <!-- Assess Section -->
+    <div class="accordion-item">
+      <button class="accordion-header">ASSESS:</button>
+      <div class="accordion-content">
+        <ul>
+          <li>Gauge your Knowledge and Awareness.</li>
+          <li>Take a Cybercrime Awareness Quiz for tailored recommendations.</li>
+          <li>Challenge yourself with periodic assessments to track progress.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Report Section -->
+    <div class="accordion-item">
+      <button class="accordion-header">REPORT:</button>
+      <div class="accordion-content">
+        <ul>
+          <li>Find step-by-step guidance on reporting incidents.</li>
+          <li>Access direct links to relevant authorities or agencies.</li>
+          <li>ChatBot assistance for guided reporting processes.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Stay Updated Section -->
+    <div class="accordion-item">
+      <button class="accordion-header">STAY UPDATED:</button>
+      <div class="accordion-content">
+        <ul>
+          <li>Visit Cybercrime Statistics for the latest data trends.</li>
+          <li>Follow updates in our Knowledge Hub.</li>
+          <li>Enable personalized alerts to stay informed on new threats.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -195,5 +215,27 @@
       </div>
     </div>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.querySelectorAll('.accordion-header').forEach((header) => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+
+        // Toggle open class
+        content.classList.toggle('open');
+
+        // Adjust max-height for smooth transition
+        if (content.classList.contains('open')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0';
+        }
+      });
+    });
+  </script>
+
+
+
 </body>
 </html>

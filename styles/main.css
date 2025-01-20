@@ -269,6 +269,71 @@ body {
   outline: none; /* Removes the blue outline on focus */
 }
 
+/* HOW IT WORKS section CSS */
+.how-it-works {
+  padding: 2rem;
+  background-color: #0f172a;
+  color: #fff;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  background-color: #1e293b;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.accordion-header:hover {
+  background-color: #334155;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #1e293b;
+  padding: 0 1rem;
+}
+
+.accordion-content ul {
+  list-style-type: disc;
+  padding: 1rem;
+}
+
+.accordion-content li {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.accordion-content.open {
+  max-height: 200px; /* Adjust based on content height */
+}
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
