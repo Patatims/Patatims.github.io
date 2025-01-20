@@ -271,7 +271,7 @@ body {
 
 /* HOW IT WORKS section CSS */
 .how-it-works {
-  padding: 40px 100px; /* Top/Bottom padding and default side padding */
+  padding: 60px 100px 80px; /* Top/Bottom padding and default side padding */
   background: url('../assets/background/howitworkBG.svg') no-repeat right center, 
   url('../assets/background/indexBG.png') no-repeat center;
   background-size: 20%, cover; /* SVG is contained, PNG covers the section */
