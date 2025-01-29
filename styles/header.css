@@ -1,70 +1,112 @@
-/* header.css */
-
 /* Navbar Styles */
 .navbar {
-    background: #f4f4f4; /* Light gray background */
-    padding: 1rem 0; /* Adds spacing to top and bottom */
-    display: flex; /* Flexbox layout */
-    justify-content: center; /* Center nav items inside navbar */
-    align-items: center; /* Vertically center content */
-    position: relative;
-    z-index: 10;
-    box-shadow: 1px 0px 5px black;
-  }
-  
-  /* Central container for consistent width */
+  background: #f4f4f4; /* Light gray background */
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  box-shadow: 1px 0px 5px black;
+}
+
+/* Navbar container adjustment */
+.navbar .container {
+  display: flex;
+  justify-content: space-between; /* Keeps spacing between logo and nav-links */
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Logo - Adjusted for better spacing */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo Styles */
+.navbar .logo img {
+  display: block;
+  max-height: 35px;
+}
+
+/* Centering nav-links */
+.nav-links {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  font-weight: 450;
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Ensures the links stay centered */
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Adjust spacing between nav items */
+.nav-links li {
+  margin: 0 1.5rem;
+}
+
+/* Navbar link styles */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: none;
+}
+
+/* Tablet & Mobile Fixes */
+@media (max-width: 1024px) {
   .navbar .container {
-    display: flex;
-    justify-content: space-between; /* Space between logo, nav-links, and language selector */
-    align-items: center; /* Vertically center all items */
-    width: 100%; /* Ensures the container spans the full width */
+    justify-content: space-between; /* Ensures spacing */
   }
-  
-  .navbar .logo img {
-    padding-left: 15px;
+
+  /* Fix overlapping issue */
+  .navbar .logo {
+    position: relative; /* REMOVE absolute positioning */
+    left: unset; /* Reset left positioning */
+  }
+
+  .menu-toggle {
     display: block;
-    max-height: 35px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    margin-right: 20px;
+    z-index: 20; /* Ensures it's above other elements */
   }
-  
-  /* Navbar link styles */
+
   .nav-links {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 16px;
-    font-weight: 450;
-    list-style: none; /* Removes bullets */
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: #f4f4f4;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.show {
     display: flex;
-    margin-right: 0px;
   }
-  
-  .nav-links li {
-    margin-left: 2.0rem; /* Spacing between links */
-    margin-right: 2.0rem;
-  }
-  
-  .nav-links a {
-    text-decoration: none; /* Removes underline */
-    color: #333; /* Matches logo color */
-    font-size: 1rem;
-  }
-  
-  .language-selector {
-    margin-right: 75px;
-  }
-  
-  /* Language selector dropdown */
-  .language-selector select {
-    padding: 0.5rem; /* Adds padding */
-    border: 1px solid #ccc; /* Subtle border */
-    border-radius: 5px; /* Rounded corners */
-  }
+}
 
-
-/* Media Query for smaller screens (max-width: 768px) */
-/* Fix Navbar Layout on Desktop */
+/* Desktop Navbar */
 @media (min-width: 769px) {
   .navbar .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 
@@ -73,16 +115,63 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap;
   }
 
   .nav-links li {
-    margin: 0 1rem; /* Add spacing between links */
-    white-space: nowrap; /* Prevent text from wrapping */
+    margin: 0 1rem;
+    white-space: nowrap;
   }
 
   .nav-links a {
     font-size: 1rem;
   }
 }
-  
+
+/* Mobile Navbar (Max Width: 768px) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #f4f4f4;
+    padding: 1rem 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.5rem;
+  }
+
+  /* Fix for overlapping logo */
+  .navbar .logo {
+    position: relative;
+    left: unset; /* Remove absolute positioning */
+    padding-left: 10px; /* Adjust spacing */
+  }
+}

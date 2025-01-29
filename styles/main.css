@@ -127,83 +127,87 @@ body {
   background-color: #e68900; /* Slightly darker on hover */
 }
 
-
-
-
-
+/*
+======================================
+     What is ClickSmart Section
+======================================        
+*/
+/* ClickSmart Left & Right */
 .clicksmart-left, .clicksmart-right {
   flex: 1;
   justify-content: space-between;
   margin: 0 2%;
 }
 
-/* Section Styles for the Two New Content Sections */
-.clicksmart-info{
+/* Section Styles for ClickSmart Info */
+.clicksmart-info {
   background: #F1F1F1; 
-  padding: 2.5rem 0; /* Adjust padding */
+  padding: 3rem 0; /* Slightly increase padding */
   display: flex;
+  align-items: center;
+  justify-content: center; /* Centers content */
   margin: auto;
   position: relative;
   z-index: 3;
-  height: 75vh;
-  overflow: auto;
-  
+  min-height: 70vh; /* Reduce default height */
+  transition: min-height 0.3s ease-in-out;
 }
 
-.clicksmart-info h1 {
-  font-size: 3.6rem;
-  color: rgba(0, 0, 0, 0.9);
-  margin-bottom: 0.6rem;
-}
-
-.clicksmart-info .clicksmart-right p {
-  font-size: 1.54rem;
-  color: rgba(0, 0, 0, 0.9);
-  line-height: 1.7rem;
-  padding-right: 4.3rem;
-}
-
-.clicksmart-info .clicksmart-right p {
-  margin-bottom: 1.2rem;
-
-}
-
-.clicksmart-info img {
-  display: block; /* Ensures the image behaves as a block-level element */
-  width: 750px; /* Makes the image responsive */
-  max-width: 100%; /* Restricts the maximum width for consistency */
-  height: auto; /* Maintains the aspect ratio */
-  margin-right: 10rem; 
-}
-
-
- .clicksmart-work {
-  background: #1a1a3e; /* Dark blue background */
-  padding: 2.5rem 0; /* Adjust padding */
-  color: white;
-  position: relative;
-  z-index: 2;
-}
-
-
-.clicksmart-info .container, .clicksmart-work .container {
-  padding: 2rem;
+.clicksmart-info .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
+  max-width: 1450px;
 }
 
+/* LEFT: SVG IMAGE */
+.clicksmart-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Aligns image properly */
+}
 
-/* News Section Updates */
+.clicksmart-info img {
+  display: block;
+  width: 700px; /* Reduce width */
+  max-width: 110%;
+  height: auto;
+  margin-left: -60px; /* Push left */
+  transition: margin 0.3s ease-in-out;
+}
+
+/* RIGHT: TEXT */
+.clicksmart-right {
+  flex: 1;
+  text-align: left;
+  padding-left: 3rem; /* Add spacing */
+}
+
+.clicksmart-info h1 {
+  font-size: 3rem; /* Reduce slightly */
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 1.2rem;
+}
+
+.clicksmart-info .clicksmart-right p {
+  font-size: 1.32rem; /* Reduce font size */
+  line-height: 1.8rem; /* Adjust spacing */
+  max-width: 650px; /* Prevent text from being too wide */
+  text-align: left;
+  margin-bottom: 1rem; /* Add spacing */
+}
+
+/* News Section */
 .news-section {
-  overflow-y: auto; /* Enable vertical scrolling */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  padding: 2rem 1rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4rem 1rem;
   background: url('../assets/background/newsBG.png') no-repeat center;
-  background-size: cover; /* Image covers the section */
-  margin: auto;
-  width: auto;
-  height: calc(70vh + 10vh);
+  background-size: cover;
+  min-height: 80vh; 
+  transition: height 0.3s ease-in-out;
 }
 
 .news-section h2 {
@@ -218,42 +222,44 @@ body {
 .news-grid {
   display: flex;
   flex-wrap: wrap;
-  overflow-x: hidden; /* Allow horizontal scrolling */
-  gap: 2rem; /* Adds spacing between cards */
-  justify-content: space-around; /* Centers the grid items */
+  overflow-x: hidden;
+  gap: 2rem;
+  justify-content: space-around;
   padding-bottom: 1rem;
 }
 
 /* News Card */
 .news-card {
-  flex: 1 1 calc(25% - 2rem); /* Default: Four cards per row */
-  max-width: calc(25% - 2rem); /* Prevents cards from stretching too wide */
-  min-width: 250px; /* Ensures a minimum card size */
+  flex: 1 1 calc(25% - 2rem);
+  max-width: calc(25% - 2rem);
+  min-width: 250px;
   box-sizing: border-box;
-  color: #f4f4f4; /* Light text color */
+  color: #f4f4f4;
   text-align: left;
-  background: none; 
-  border: none; /* Removes border */
-  box-shadow: none; /* Removes shadow */
-  overflow: hidden; /* Keeps content within card */
+  background: none;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
 }
 
+/* News Card Image */
 .news-card img {
-  width: 100%; /* Ensure the image scales to the card's width */
+  width: 100%;
   max-width: 100%;
-  max-height: 400px; /* Add a max height to control size */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image fits the card properly */
-  border-radius: 10px; /* Rounded corners */
-  margin-bottom: 1rem; /* Space below the image */
+  max-height: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .news-card img:hover {
-  transform: scale(1.05); /* Adds hover zoom effect */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Adds shadow */
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* News Card Heading */
 .news-card h3 {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -266,37 +272,41 @@ body {
   transition: color 0.3s ease;
 }
 
+/* News Card Paragraph */
 .news-card p {
   text-decoration: none;
   font-size: 1rem;
-  color: #b3b3b3; /* Lighter gray for metadata */
+  color: #b3b3b3;
 }
 
+/* News Card Hover */
 .news-card:hover {
-  color: #fff; /* Bright white on hover */
-  text-decoration: none; /* No underline on hover */
+  color: #fff;
+  text-decoration: none;
 }
 
-/* For focus outline on accessibility (optional) */
+/* Accessibility: Focus Outline */
 .news-card {
-  outline: none; /* Removes default browser focus styles */
-  color: #fff; /* Optional: Match hover behavior */
+  outline: none;
+  color: #fff;
 }
 
+/* News Card Links */
 .news-card a {
-  color: #f4f4f4; /* Default text color (white) */
-  text-decoration: none; /* Removes the underline */
-  transition: color 0.3s ease; /* Smooth transition for hover */
+  color: #f4f4f4;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .news-card a:hover {
-  color: #fff; /* Bright white on hover */
-  text-decoration: none; /* Ensures no underline on hover */
+  color: #fff;
+  text-decoration: none;
 }
 
 .news-card a:focus {
-  outline: none; /* Removes the blue outline on focus */
+  outline: none;
 }
+
 
 /* HOW IT WORKS section CSS */
 .how-it-works {
@@ -431,26 +441,6 @@ body {
 
 /* Tablets and smaller desktops (768px - 1024px) */
 @media (max-width: 1024px) {
-  /* Prevents navbar wrapping */
-  .navbar .container {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 0 1rem;
-  }
-
-  .nav-links {
-    flex-wrap: nowrap;
-    justify-content: center;
-  }
-
-  .nav-links li {
-    margin: 0 1rem; /* Reduce spacing */
-  }
-
-  .nav-links a {
-    font-size: 0.95rem; /* Slightly reduce text size */
-  }
-
   .container {
     max-width: 90%; /* Keep it flexible on smaller screens */
   }
@@ -515,18 +505,6 @@ body {
   /* General Container Adjustment */
   .container {
     max-width: 95%;
-  }
-
-  /* Navbar for Mobile */
-  .navbar {
-    flex-direction: column; /* Stack content */
-    align-items: center;
-    padding: 1rem 0;
-  }
-
-  .navbar .container {
-    flex-direction: column;
-    align-items: center;
   }
 
   /* Hero Section */
@@ -595,27 +573,35 @@ body {
     gap: 1.5rem;
   }
 
-  /* Show menu toggle button only on mobile */
-  .menu-toggle {
-    display: block;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #333;
-    cursor: pointer;
-    margin: 1rem;
+  .clicksmart-info {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    text-align: center;
+    min-height: auto;
+    padding: 3rem 1.5rem;
   }
 
-  /* Hide navbar links by default on mobile */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
+  /* Hide SVG Image */
+  .clicksmart-left {
+    display: none; /* Remove SVG when zoomed */
+  }
+
+  /* Center Align Content */
+  .clicksmart-right {
+    max-width: 90%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .clicksmart-info h1 {
+    font-size: 2.4rem; /* Adjust font size */
+  }
+
+  .clicksmart-info .clicksmart-right p {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    max-width: 100%;
     text-align: center;
   }
 
-  /* Show navbar links when menu is toggled */
-  .nav-links.show {
-    display: flex;
-  }
 }

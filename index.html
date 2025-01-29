@@ -41,12 +41,6 @@
             <li><a href="pages/helpcenter.html">Resources Hub</a></li>
           </ul>
         </nav>
-        <div class="language-selector">
-          <select>
-            <option>English (English)</option>
-            <option>Tagalog</option>
-          </select>
-        </div>
       </div>
     </header>
     
@@ -269,15 +263,12 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
 
-        if (menuToggle) {
-          menuToggle.addEventListener('click', function () {
-            this.classList.toggle('active');
-            navLinks.classList.toggle('show');
-          });
-        }
+        menuToggle.addEventListener("click", function () {
+          navLinks.classList.toggle("show"); // Toggle visibility
+        });
       });
     </script>
 
@@ -287,7 +278,13 @@
         const viewportHeight = window.innerHeight;
 
         sections.forEach((section) => {
-          section.style.minHeight = viewportHeight + "px";
+          if (section.classList.contains("clicksmart-info")) {
+            section.style.minHeight = viewportHeight * 0.8 + "px"; /* Slightly smaller height */
+          } else if (section.classList.contains("news-section")) {
+            section.style.minHeight = viewportHeight * 0.75 + "px"; /* Keep News Section smaller */
+          } else {
+            section.style.minHeight = viewportHeight + "px"; /* Full viewport for Hero */
+          }
         });
       }
 
