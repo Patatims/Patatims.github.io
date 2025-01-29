@@ -60,26 +60,29 @@
 
 
 /* Media Query for smaller screens (max-width: 768px) */
-@media (max-width: 768px) {
-    /* Stacks navbar links vertically */
-    .navbar .container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      margin-top: 1rem; /* Adds spacing above links */
-    }
-  
-    .nav-links li {
-      margin: 0.5rem 0; /* Adds spacing between links */
-    }
-  
-    /* Adjust language selector margin */
-    .language-selector {
-      margin-right: 0; /* Adjust as needed */
-    }
+/* Fix Navbar Layout on Desktop */
+@media (min-width: 769px) {
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+
+  .nav-links li {
+    margin: 0 1rem; /* Add spacing between links */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+}
   

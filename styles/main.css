@@ -12,13 +12,12 @@ Reset margin, padding, and box-sizing for all elements */
 body {
   font-family: 'Roboto Flex', sans-serif;
   line-height: 1.6; /* Improves readability */
-  -webkit-font-smoothing: antialiased; /* Improve rendering on Chrome */
-  -webkit-text-size-adjust: 100%; /* Prevents text resizing on iOS */
 }
 
 /* Central container for consistent width */
 .container {
   width: auto;
+  max-width: 1400px;
   margin: 0 auto; /* Centers the container */
   margin-left: 5%;
   margin-right: 3%;
@@ -26,82 +25,110 @@ body {
 
 /* Hero Section */
 .hero {
-  position: relative;
-  z-index: 5;
-  display: flex; /* Side-by-side layout */
-  justify-content: space-between; /* Equal space on both sides */
-  align-items: center; /* Aligns vertically */
-  height: calc(75vh + 10vh);
-  padding: 5rem 0 10rem 0; /* Adds spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  min-height: 100vh;
+  padding: 5rem 5%;
   background: url('../assets/background/donutBG.svg') no-repeat right center, 
               url('../assets/background/indexBG.png') no-repeat center;
-  background-size: 58%, cover; /* SVG is contained, PNG covers the section */
-  color: #fff; /* White text color */
+  background-size: 58%, cover;
+  color: #fff;
   overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  gap: 3rem; /* Adds spacing between text and image */
+}
+
+.hero .container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
-/* Left side of hero section */
+/* Left side */
 .hero-left {
-  flex: 1; /* Takes up equal space */
-  margin: auto;
-  margin-left: 3rem ;
+  flex: 1;
+  max-width: 750px; /* Prevents excessive stretching */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensures top alignment */
+  align-items: flex-start; /* Keeps text aligned left */
+  gap: 1rem; /* Adds spacing between h1 and p */
 }
 
+/* Ensure <p> is aligned with <h1> */
+.hero-left h1,
+.hero-left p {
+  max-width: 750px;
+  text-align: left;
+  margin: 0; /* Remove auto margin */
+  padding-left: 0; /* Prevents unnecessary indentation */
+}
+
+/* Hero Section Heading */
 .hero-left h1 {
   font-family: 'Roboto Flex', sans-serif;
-  font-size: 2.5rem; /* Larger font for emphasis */
+  font-size: 2.5rem;
   font-weight: 700;
-  letter-spacing: .048rem;
-  line-height: 3.45rem;
+  letter-spacing: 0.048rem;
+  line-height: 3rem;
   font-style: italic;
-  margin-bottom: 0.9rem; /* Adds spacing below  */
-  padding-right: 2rem; /* Adds spacing on the right */
-  padding-left: 5rem;
+  margin-bottom: 1rem;
+  max-width: 600px; /* Prevents shrinking */
+  white-space: normal; /* Ensures it stays multi-line */
 }
-
+/* Hero Section Paragraph */
 .hero-left p {
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 1.45rem; /* Slightly larger text */
-  line-height: 1.9rem; /* Improves readability */
-  padding-right: 2rem; /* Adds spacing on the right */
-  padding-left: 5rem;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  max-width: 750px; /* Prevents it from collapsing */
+  text-align: left; /* Keeps text left-aligned */
 }
 
-
-/* Right side of hero section */
+/* Right side */
 .hero-right {
-  flex: 1; /* Equal width with the left side */
-  position: relative; /* Allows precise positioning for content */
+  flex: 1;
   display: flex;
-  justify-content: center; /* Centers child elements horizontally */
-  align-items: center; /* Centers child elements vertically */
-  margin-right: 10rem;
-  overflow: hidden;
-  pointer-events: none; /* Disables the image from triggering pointer events */
-  user-select: none; /* Prevents text selection and typing cursor */
-  height: 100%; /* Ensures the container maintains the desired height */
-}
-
-.hero-right a {
-  display: inline-block;
-  pointer-events: auto; /* Enable pointer events for the anchor tag */
-  width: auto; /* Makes the anchor fill the container */
+  justify-content: center;
+  align-items: center;
+  max-width: 52%;
 }
 
 .hero-right img {
-  position: relative; /* Sits above the background */
-  z-index: 2; /* Layers above the background */
-  width: 480px; /* Adjust size as needed */
-  max-width: 100%; /* Ensures image is responsive */
-  height: auto; /* Maintains aspect ratio */
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 8px; /* Optional: Rounded corners */
 }
 
-.hero-right a:hover{
-  cursor: pointer; /* Ensures the pointer cursor appears when hovering over the image link */
+/* Hero Section Link Styling */
+.hero-left a {
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #ff9800; /* Accent color */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
 }
+
+.hero-left a:hover {
+  background-color: #e68900; /* Slightly darker on hover */
+}
+
+
+
 
 
 .clicksmart-left, .clicksmart-right {
@@ -365,197 +392,230 @@ body {
   color: #F1F1F1;
 }
 
+/* Responsive Adjustments for Larger Desktops */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
   .news-card {
-    flex: 1 1 calc(50% - 2rem); /* Two cards per row for tablets */
-    max-width: calc(50% - 2rem);
+    flex: 1 1 calc(25% - 2rem); /* Four cards per row */
+    max-width: calc(25% - 2rem);
+  }
+
+  /* Adjust Hero Section for Larger Screens */
+  .hero .container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-left {
+    min-width: 500px;
+    max-width: 1200px;
+  }
+
+  .hero-left h1, .hero-left p {
+    max-width: 750px;
+  }
+
+  .hero-left p {
+    max-width: 600px;
   }
 }
 
-/* Media Query for smaller screens (max-width: 768px) */
-@media (max-width: 768px) {
+/* Tablets and smaller desktops (768px - 1024px) */
+@media (max-width: 1024px) {
+  /* Prevents navbar wrapping */
+  .navbar .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .nav-links li {
+    margin: 0 1rem; /* Reduce spacing */
+  }
+
+  .nav-links a {
+    font-size: 0.95rem; /* Slightly reduce text size */
+  }
+
+  .container {
+    max-width: 90%; /* Keep it flexible on smaller screens */
+  }
+
+  /* Hero Section */
   .hero {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .hero .container {
+    flex-direction: column;
+    max-width: 90%; /* Keep it aligned with the navbar */
+  }
+
+  .hero-left, .hero-right {
+    max-width: 100%;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .hero-left {
+    max-width: 90%;
+    gap: 0.8rem; 
   }
 
   .hero-left h1 {
     font-size: 2rem;
+    line-height: 2.5rem;
+    max-width: 90%;
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    max-width: 90%;
+  }
+
+  .hero-left a {
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 
   .hero-right img {
-    width: 80%;
+    width: 90%;
+    max-width: 400px;
   }
 
-  /* ✅ News Section Adjustments */
   .news-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  .news-card {
-    flex: 1 1 100%;
-    max-width: 90%;
-    text-align: center;
-  }
-
-  .news-card img {
-    width: 100%;
-    max-height: 300px;
-  }
-
-  /* ✅ Align "How It Works" */
-  .how-it-works {
-    padding: 40px 20px;
-    text-align: left;
-  }
-
-  .accordion-header {
-    font-size: 1.3rem;
-  }
-
-  .circle-arrow-btn {
-    width: 40px;
-    height: 40px;
-  }
-
-  .accordion-content {
-    max-width: 85%;
+    grid-template-columns: repeat(2, 1fr); /* Two news cards per row */
   }
 }
 
-@media (max-width: 600px) {
-  /* Navbar adjustments for mobile */
+/* Hide menu toggle button by default (for desktops) */
+.menu-toggle {
+  display: none;
+}
+
+/* Mobile Devices (below 768px) */
+@media (max-width: 768px) {
+  /* General Container Adjustment */
+  .container {
+    max-width: 95%;
+  }
+
+  /* Navbar for Mobile */
+  .navbar {
+    flex-direction: column; /* Stack content */
+    align-items: center;
+    padding: 1rem 0;
+  }
+
   .navbar .container {
     flex-direction: column;
     align-items: center;
   }
 
-  /* Hero section stack */
+  /* Hero Section */
   .hero {
+    display: flex;
     flex-direction: column;
+    align-items: center; /* Ensures everything is centered */
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
 
-  .hero-left,
-  .hero-right {
-    width: 100%;
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 95%;
+  }
+
+  /* Centering Hero Left Content */
+  .hero-left {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all elements inside */
+    text-align: center !important; /* Force center alignment */
+    gap: 1rem;
+  }
+
+  .hero-left h1,
+  .hero-left p {
+    max-width: 90%;
+    text-align: center !important; /* Forces text to center */
   }
 
   .hero-left h1 {
-    font-size: 1.7rem;
-    margin-bottom: 15px;
+    font-size: 2rem; /* Adjusts font size for better fit */
+    line-height: 2.4rem;
   }
 
   .hero-left p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+
+  .hero-left a {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  /* Hero Right (Image) */
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .hero-right img {
     width: 100%;
-    height: auto;
+    max-width: 350px;
   }
 
-  /* News Section Layout */
+  /* News Grid */
   .news-grid {
+    grid-template-columns: 1fr; /* One news card per row */
+    gap: 1.5rem;
+  }
+
+  /* Show menu toggle button only on mobile */
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    margin: 1rem;
+  }
+
+  /* Hide navbar links by default on mobile */
+  .nav-links {
+    display: none;
     flex-direction: column;
-    align-items: center;
-  }
-
-  .news-card {
     width: 100%;
-    max-width: 90%;
-    margin-bottom: 1rem;
-  }
-
-  .news-card img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-  }
-
-  /* Adjusting "How It Works" */
-  .how-it-works {
-    padding: 20px;
     text-align: center;
   }
 
-  .accordion {
-    width: 100%;
-    padding-left: 0;
+  /* Show navbar links when menu is toggled */
+  .nav-links.show {
+    display: flex;
   }
-
-  .accordion-header {
-    font-size: 1.2rem;
-    justify-content: center;
-  }
-
-  .accordion-content {
-    max-width: 100%;
-  }
-
-  .circle-arrow-btn {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-
-@media (max-width: 992px) {
-  .how-it-works h2 {
-    text-align: center;
-  }
-
-  .accordion-header {
-    font-size: 1.2rem;
-  }
-
-  .footer .footer-column {
-    text-align: left;
-  }
-}
-
-/* ==============================
-  📌 Large Screens (1200px and above)
-================================== */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-  }
-
-  .hero {
-    padding: 40px 0;
-  }
-
-  .how-it-works {
-    padding: 60px 20px;
-  }
-}
-
-/* ==============================
-     Fix for iOS Safari Issues
-================================== */
-@supports (-webkit-touch-callout: none) {
-  html {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  body {
-    touch-action: manipulation;
-  }
-}
-
-/* ==============================
-  Extra Fixes for Android Chrome
-================================== */
-body {
-  -webkit-font-smoothing: antialiased;
 }
