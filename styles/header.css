@@ -167,6 +167,22 @@ body {
 
 /* Mobile Navbar (Max Width: 768px) */
 @media (max-width: 768px) {
+  .navbar {
+    position: fixed; /* Makes navbar stay while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(244, 244, 244, 0.98); /* Light background with slight transparency */
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
+  }
+
+  /* Add padding so content doesn't get hidden under navbar */
+  body {
+    padding-top: 110px; /* Adjust this based on navbar height */
+  }
+
   .navbar .container {
     flex-direction: column; /* Stacks elements */
     align-items: center; /* Centers logo */
@@ -174,12 +190,13 @@ body {
     text-align: center;
   }
 
-    /* Center the logo at mobile device*/
-    .navbar .logo {
-      display: flex;
-      justify-content: center; /* Centers horizontally */
-      margin-bottom: 0.5rem; /* Adds spacing */
-    }
+  /* Center the logo at mobile device */
+  .navbar .logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.5rem; /* Adds spacing */
+  }
 
   .menu-toggle {
     display: block;
@@ -188,9 +205,10 @@ body {
     border: none;
     color: #333;
     cursor: pointer;
-    margin-right: 20px;
+    margin-top: -5px; /* Adjust positioning */
   }
 
+  /* Mobile nav links */
   .nav-links {
     visibility: hidden;
     opacity: 0;
@@ -199,14 +217,15 @@ body {
     text-align: center;
     background: #f4f4f4;
     position: absolute;
-    top: 60px;
+    top: 100%; /* Ensures it appears below navbar */
     left: 0;
     padding: 1rem 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 999;
     transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   }
 
+  /* Show animation */
   .nav-links.show {
     visibility: visible;
     opacity: 1;
