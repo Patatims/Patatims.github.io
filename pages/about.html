@@ -75,6 +75,39 @@
           </div>
         </div>
       </footer>
+
+    <!-- JavaScript -->
+    <script>
+      document.querySelectorAll('.accordion-header').forEach((header) => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+
+          // Toggle open class
+          content.classList.toggle('open');
+
+          // Adjust max-height for smooth transition
+          if (content.classList.contains('open')) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          } else {
+            content.style.maxHeight = '0';
+          }
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", function () {
+          navLinks.classList.toggle("show"); // Toggle visibility
+        });
+      });
+    </script>
+
+
+
 </body>
 
 </html>
