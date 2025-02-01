@@ -27,6 +27,9 @@
       <div class="logo">
         <a href="../index.html"><img src="../logo/logo.png" alt="ClickSmart"></a>
       </div>
+
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
       <nav class="nav-center">
         <ul class="nav-links">
           <li><a href="reporting.html">Cybercrime Guide</a></li>
@@ -116,18 +119,6 @@
         });
       });
     </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.querySelector(".menu-toggle");
-        const navLinks = document.querySelector(".nav-links");
-
-        menuToggle.addEventListener("click", function () {
-          navLinks.classList.toggle("show"); // Toggle visibility
-        });
-      });
-    </script>
-
 
 
 </body>
