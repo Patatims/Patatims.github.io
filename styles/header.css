@@ -59,7 +59,7 @@ body {
   display: flex;
   justify-content: space-between; /* Center horizontally */
   padding: .4rem 0;
-  margin: 0 auto 0 5rem;
+  margin: 0 auto 0 2rem;
 }
 
 /* Adjust spacing between nav items */
@@ -115,6 +115,7 @@ body {
     text-align: center;
     background: #f4f4f4;
     position: absolute;
+    margin: 0;
     top: 60px;
     left: 0;
     padding: 1rem 0;

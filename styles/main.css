@@ -315,40 +315,47 @@ body {
 
 /* HOW IT WORKS section CSS */
 .how-it-works {
-  padding: 60px 100px 80px; /* Top/Bottom padding and default side padding */
+  padding: 60px 5%; /* Adjust padding for responsiveness */
   background: url('../assets/background/howitworkBG.svg') no-repeat right center, 
-  url('../assets/background/indexBG.png') no-repeat center;
-  background-size: 20%, cover; /* SVG is contained, PNG covers the section */
+              url('../assets/background/indexBG.png') no-repeat center;
+  background-size: 20%, cover; /* Keeps SVG contained, PNG covers section */
   color: #F1F1F1;
   display: flex;
-  flex-direction: column; /* Aligns title and content vertically */
+  flex-direction: column;
   align-items: flex-start; /* Aligns everything to the left */
+  max-width: 1200px; /* Ensures the section doesn't stretch too wide */
+  margin: auto;
 }
 
+/* Section Title */
 .how-it-works h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 20px;
-  padding-left: 3rem; /* Consistent left padding */
+  padding-left: 3rem;
 }
 
+/* Accordion Container */
 .accordion {
-  width: 100%; /* Takes full width of the section */
-  padding-left: 4rem; /* Matches the left alignment of the title */
+  width: 100%;
+  padding-left: 3rem; /* Aligns with the title */
 }
 
+/* Individual Accordion Item */
 .accordion-item {
   margin-bottom: 20px;
 }
 
+/* Accordion Header (Title + Button) */
 .accordion-header {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between the button and text */
+  gap: 10px;
   font-size: 1.2rem;
   font-weight: 350;
   cursor: pointer;
 }
 
+/* Circle Button */
 .circle-arrow-btn {
   background: none;
   border: none;
@@ -366,40 +373,47 @@ body {
   height: 30px;
 }
 
+/* Accordion Content */
 .accordion-content {
-  margin-left: 2.5rem; /* Indents sub-content relative to the header */
+  margin-left: 2rem;
   max-height: 0;
-  max-width: 55%;
+  max-width: 65%;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
 
 .accordion-content.open {
-  max-height: 500px; /* Adjusted to show content when opened */
+  max-height: 500px;
 }
 
-.accordion-content h4{
+/* Subtitles Inside Accordion */
+.accordion-content h4 {
   font-size: 1.3rem;
+  font-weight: bold;
 }
 
-.accordion-content a{
+/* Links */
+.accordion-content a {
   text-decoration: none;
   font-weight: bold;
   color: #F1F1F1;
 }
 
+/* Unordered List */
 .accordion-content ul {
   font-size: 1.1rem;
   list-style: none;
   padding: 0 20px;
 }
 
+/* List Items */
 .accordion-content ul li {
   margin-bottom: 10px;
   position: relative;
   padding-left: 20px;
 }
 
+/* Bullet Point */
 .accordion-content ul li:before {
   content: '•';
   position: absolute;
