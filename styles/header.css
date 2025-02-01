@@ -17,7 +17,7 @@
 /* Navbar when scrolled */
 .navbar.scrolled {
   background: rgba(244, 244, 244, 1); /* Fully opaque when scrolled */
-  padding: 0.6rem 0; /* Slightly reduces padding */
+  padding: 0.5rem 0; /* Slightly reduces padding */
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); /* Increases shadow */
 }
 
@@ -53,9 +53,10 @@
   font-weight: 450;
   list-style: none;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  padding: 0;
+  justify-content: space-between; /* Center horizontally */
+  padding: .4rem 0;
   margin: 0 auto;
+  
 }
 
 /* Adjust spacing between nav items */
