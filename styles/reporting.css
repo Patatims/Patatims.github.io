@@ -1,31 +1,36 @@
 /* General Reset 
 Reset margin, padding, and box-sizing for all elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Global body styles */
-  body {
-    font-family: "Roboto-flex" ,Arial, sans-serif; /* Default font family */
-    line-height: 1.6; /* Improves readability */
-  }
-  
-  /* Central container for consistent width */
-  .container {
-    width: auto;
-    margin: 0 auto; /* Centers the container */
-    margin-left: 5%;
-    margin-right: 3%;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Global body styles */
+body {
+  font-family: 'Roboto Flex', sans-serif;
+  line-height: 1.6; /* Improves readability */
+}
+
+/* Central container for consistent width */
+.container {
+  width: auto;
+  max-width: 1400px;
+  margin: 0 auto; /* Centers the container */
+  margin-left: 5%;
+  margin-right: 3%;
+}
 
   /* Hero Section */
 .report-page {
   text-align: center;
   padding: 4rem 0;
   background: #ffffff;
-  margin-top: 3rem;
   margin-bottom: 2rem;
 }
 

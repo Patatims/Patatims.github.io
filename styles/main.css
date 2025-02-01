@@ -27,8 +27,11 @@ body {
   margin-left: 5%;
   margin-right: 3%;
 }
-
-/* Hero Section */
+/*
+======================================
+            HERO Section
+======================================        
+*/
 .hero {
   display: flex;
   justify-content: center;
@@ -204,7 +207,11 @@ body {
   margin-bottom: 1rem; /* Add spacing */
 }
 
-/* News Section */
+/*
+======================================
+      News and Article Section
+======================================        
+*/
 .news-section {
   overflow-y: auto;
   overflow-x: hidden;
@@ -313,7 +320,11 @@ body {
 }
 
 
-/* HOW IT WORKS section CSS */
+/*
+======================================
+        How it Works Section
+======================================        
+*/
 .how-it-works {
   width: 100vw; /* Full viewport width */
   max-width: 100%; /* Ensures it does not shrink */
