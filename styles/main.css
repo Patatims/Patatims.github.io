@@ -422,6 +422,34 @@ body {
   color: #F1F1F1;
 }
 
+/* Floating Chatbot Button */
+.chatbot-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensures it stays above other elements */
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Icon Styling */
+.chatbot-widget img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Hover Effect */
+.chatbot-widget:hover {
+  transform: scale(1.1);
+}
+
 /* Responsive Adjustments for Larger Desktops */
 @media (min-width: 1024px) {
   .container {
@@ -514,6 +542,10 @@ body {
   .news-grid {
     grid-template-columns: repeat(2, 1fr); /* Two news cards per row */
   }
+  
+  .chatbot-widget {
+    display: none;
+}
 }
 
 /* Hide menu toggle button by default (for desktops) */
@@ -657,5 +689,9 @@ body {
     width: 25px;
     height: 25px;
   }  
+
+  .chatbot-widget {
+    display: none;
+}
 
 }

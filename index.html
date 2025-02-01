@@ -242,6 +242,12 @@
       </div>
     </footer>
 
+    <!-- Chatbot Floating Widget -->
+    <div class="chatbot-widget" onclick="toggleChatbot()">
+      <img src="assets/icons/bot.png" alt="Chat with us">
+    </div>
+
+
     <!-- JavaScript -->
     <script>
       document.querySelectorAll('.accordion-header').forEach((header) => {
@@ -303,6 +309,14 @@
         }
       });
     </script>
+
+    <script>
+      function toggleChatbot() {
+          window.open('https://m.me/your-page', '_blank');
+          alert("Chatbot feature coming soon!"); // Replace this with actual chatbot code
+      }
+    </script>
+
 
 
   </body>
