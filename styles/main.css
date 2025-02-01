@@ -745,7 +745,7 @@ body {
     padding: 40px 5%; /* Adjust padding for small screens */
     align-items: left;
     text-align: center;
-    max-width: 95%;
+    max-width: 100%;
   }
 
   .how-it-works h2 {
@@ -766,7 +766,7 @@ body {
   }
 
   .accordion-header {
-    justify-content: center; /* Centers icons and text */
+    justify-content: left; /* Centers icons and text */
   }
 
   .circle-arrow-btn {
