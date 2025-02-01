@@ -609,4 +609,37 @@ body {
     text-align: center;
   }
 
+  .how-it-works {
+    padding: 40px 5%; /* Adjust padding for small screens */
+    align-items: center;
+    text-align: center;
+    max-width: 95%;
+  }
+
+  .how-it-works h2 {
+    font-size: 1.8rem;
+    padding-left: 0; /* Remove excessive left padding */
+    text-align: center;
+  }
+
+  .accordion {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .accordion-content {
+    max-width: 90%;
+    text-align: left; /* Keeps text aligned */
+    margin-left: 0;
+  }
+
+  .accordion-header {
+    justify-content: center; /* Centers icons and text */
+  }
+
+  .circle-arrow-btn {
+    width: 25px;
+    height: 25px;
+  }  
+
 }
