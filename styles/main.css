@@ -8,6 +8,11 @@ Reset margin, padding, and box-sizing for all elements */
   box-sizing: border-box;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Global body styles */
 body {
   font-family: 'Roboto Flex', sans-serif;
