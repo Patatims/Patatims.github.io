@@ -108,6 +108,26 @@
         </div>
       </footer>
 
+      <!-- Chatbot Floating Widget -->
+    <div class="chatbot-widget" onclick="toggleChatbox()">
+      <img src="../assets/icons/bot.png" alt="Chat">
+  </div>
+  
+    <!-- Chatbot Box -->
+    <div class="chatbox-container" id="chatbox">
+        <div class="chatbox-header">
+            ClickSmart Chatbot
+            <button class="chatbox-close" onclick="toggleChatbox()">✖</button>
+        </div>
+        <div class="chatbox-body">
+            <p>Hi! How can I assist you today?</p>
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" placeholder="Type a message...">
+            <button>Send</button>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -120,6 +140,19 @@
       });
     </script>
 
+     <script>
+        function toggleChatbox() {
+      var chatbox = document.getElementById("chatbox");
+      if (chatbox.style.display === "none" || chatbox.style.display === "") {
+          chatbox.style.display = "flex"; // Show Chatbox
+      } else {
+          chatbox.style.display = "none"; // Hide Chatbox
+        }
+      }
+      function toggleChatbot() {
+          alert("Chatbot feature coming soon!"); // Replace this with actual chatbot code
+      }
+    </script>
 
 
 </body>
