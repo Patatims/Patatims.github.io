@@ -314,7 +314,7 @@ Reset margin, padding, and box-sizing for all elements */
 
     /* Center right container */
     .made-right {
-        max-width: 90%;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center !important; /* Forces centering */
