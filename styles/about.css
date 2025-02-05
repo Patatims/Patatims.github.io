@@ -108,6 +108,7 @@ Reset margin, padding, and box-sizing for all elements */
     align-items: center;
     margin: 0 1.5rem;
     max-width: 40%;
+    user-select: none;
   }
   
   .hero-right img {
@@ -312,7 +313,7 @@ Reset margin, padding, and box-sizing for all elements */
 
   /*
 ======================================
-    Floating Chatbot Section
+        MEDIA QUERIES CSS
 ======================================        
 */
   @media (max-width: 1024px) {

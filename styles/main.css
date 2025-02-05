@@ -67,7 +67,7 @@ body {
   flex-direction: column;
   justify-content: flex-start; /* Ensures top alignment */
   align-items: flex-start; /* Keeps text aligned left */
-  gap: 1rem; /* Adds spacing between h1 and p */
+  gap: 2.3rem; /* Adds spacing between h1 and p */
 }
 
 /* Ensure <p> is aligned with <h1> */
@@ -83,7 +83,7 @@ body {
 /* Hero Section Heading */
 .hero-left h1 {
   font-family: 'Roboto Flex', sans-serif;
-  font-size: 2.5rem;
+  font-size: 3.0rem;
   font-weight: 700;
   letter-spacing: 0.048rem;
   line-height: 3rem;
@@ -96,7 +96,7 @@ body {
 .hero-left p {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.8rem;
   max-width: 750px; /* Prevents it from collapsing */
   text-align: left; /* Keeps text left-aligned */
@@ -109,6 +109,7 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 45%;
+  user-select: none;
 }
 
 .hero-right img {
@@ -321,11 +322,12 @@ body {
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto; /* Centers the content */
+  min-height: 65vh;
 }
 
 /* Section Title */
 .how-it-works h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   padding-left: 3rem;
 }

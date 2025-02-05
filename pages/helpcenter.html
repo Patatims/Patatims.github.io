@@ -47,49 +47,106 @@
 
 
   
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-          <div class="footer-column">
-            <h3>Resources</h3>
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Articles</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h3>Support</h3>
-            <ul>
-              <li><a href="#">PNP Branch</a></li>
-              <li><a href="#">PNP Contact</a></li>
-              <li><a href="#">Emails</a></li>
-              <li><a href="https://www.facebook.com/anticybercrimegroup" target="_blank">Social Media Links</a></li>
-            </ul>
-          </div>
-    
-          <div class="logo">
-            <a href="../index.html"><img src="../logo/logo2.png" alt="ClickSmart"></a>
-          </div>
-    
-          <div class="footer-bottom">
-            <p>Privacy Policy | Cookie Policy | Do Not Sell My Personal Information | Terms</p>
-          </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="reporting.html">Cybercrime Guide</a></li>
+          <li><a href="about.html">About ClickSmart</a></li>
+          <li><a href="helpcenter.html">Resources Hub</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">PNP Branches</a></li>
+          <li><a href="#">Developer Team Contacts</a></li>
+          <li><a href="#">Downloadable Material</a></li>
+          <li><a href="https://www.facebook.com/messages/t/880299735387855" target="_blank">Direct Message PNP-ACG</a></li>
+          <li><a href="https://www.facebook.com/anticybercrimegroup" target="_blank"> ACG Social Media Link</a></li>
+        </ul>
+      </div>
+
+      <div class="logo">
+        <a href="../index.html"><img src="../logo/logo2.png" alt="ClickSmart"></a>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p><a href="#">Privacy Policy</a> | &copy; 2024 ClickSmart. All Rights Reserved. | <a href="#">Terms of Use</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Chatbot Floating Widget -->
+  <div class="chatbot-widget" onclick="toggleChatbox()">
+      <img src="../assets/icons/bot.png" alt="Chat">
+  </div>
+  
+    <!-- Chatbot Box -->
+    <div class="chatbox-container" id="chatbox">
+        <div class="chatbox-header">
+            ClickSmart Chatbot
+            <button class="chatbox-close" onclick="toggleChatbox()">✖</button>
         </div>
-      </footer>
+        <div class="chatbox-body">
+            <p>Hi! How can I assist you today?</p>
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" placeholder="Type a message...">
+            <button>Send</button>
+        </div>
+    </div>
 
-    <!-- JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.querySelector(".menu-toggle");
-        const navLinks = document.querySelector(".nav-links");
-
-        menuToggle.addEventListener("click", function () {
-          navLinks.classList.toggle("show"); // Toggle visibility
+      <!-- Chatbot Floating Widget -->
+      <div class="chatbot-widget" onclick="toggleChatbox()">
+        <img src="../assets/icons/bot.png" alt="Chat">
+    </div>
+    
+      <!-- Chatbot Box -->
+      <div class="chatbox-container" id="chatbox">
+          <div class="chatbox-header">
+              ClickSmart Chatbot
+              <button class="chatbox-close" onclick="toggleChatbox()">✖</button>
+          </div>
+          <div class="chatbox-body">
+              <p>Hi! How can I assist you today?</p>
+          </div>
+          <div class="chatbox-footer">
+              <input type="text" placeholder="Type a message...">
+              <button>Send</button>
+          </div>
+      </div>
+  
+      <!-- JavaScript -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const menuToggle = document.querySelector(".menu-toggle");
+          const navLinks = document.querySelector(".nav-links");
+  
+          menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("show"); // Toggle visibility
+          });
         });
-      });
-    </script>
+      </script>
+  
+       <script>
+          function toggleChatbox() {
+        var chatbox = document.getElementById("chatbox");
+        if (chatbox.style.display === "none" || chatbox.style.display === "") {
+            chatbox.style.display = "flex"; // Show Chatbox
+        } else {
+            chatbox.style.display = "none"; // Hide Chatbox
+          }
+        }
+        function toggleChatbot() {
+            alert("Chatbot feature coming soon!"); // Replace this with actual chatbot code
+        }
+      </script>
 
 </body>
 
