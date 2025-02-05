@@ -112,28 +112,11 @@ body {
 
 .hero-right img {
   width: 100%;
-  max-width: 400px;
+  max-width: 650px;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
 }
 
-/* Hero Section Link Styling */
-.hero-left a {
-  display: inline-block;
-  font-family: 'Roboto Mono', monospace;
-  background-color: #ff9800; /* Accent color */
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 5px;
-  transition: background 0.3s ease-in-out;
-}
-
-.hero-left a:hover {
-  background-color: #e68900; /* Slightly darker on hover */
-}
 
 /*
 ======================================
@@ -796,6 +779,6 @@ body {
 
 .chatbox-container {
     display: none;
-    
+
   }
 }
