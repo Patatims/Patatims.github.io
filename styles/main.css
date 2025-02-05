@@ -49,7 +49,7 @@ body {
 }
 
 .hero .container {
-  max-width: 1400px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -73,6 +73,7 @@ body {
 /* Ensure <p> is aligned with <h1> */
 .hero-left h1,
 .hero-left p {
+  width: 85%;
   max-width: 750px;
   text-align: left;
   margin: 0; /* Remove auto margin */
@@ -107,7 +108,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 52%;
+  max-width: 45%;
 }
 
 .hero-right img {
