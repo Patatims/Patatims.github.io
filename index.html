@@ -247,21 +247,21 @@
 
     <!-- Chatbot Floating Widget -->
     <div class="chatbot-widget" onclick="toggleChatbox()">
-      <img src="assets/icons/bot.png" alt="Chat">
-  </div>
-  
+        <img src="assets/icons/bot.png" alt="Chat">
+    </div>
+
     <!-- Chatbot Box -->
     <div class="chatbox-container" id="chatbox">
         <div class="chatbox-header">
             ClickSmart Chatbot
             <button class="chatbox-close" onclick="toggleChatbox()">✖</button>
         </div>
-        <div class="chatbox-body">
-            <p>Hi! How can I assist you today?</p>
+        <div class="chatbox-body" id="chatbox-messages">
+            <p>👋 Hi! Ask me anything about cybercrime.</p>
         </div>
         <div class="chatbox-footer">
-            <input type="text" placeholder="Type a message...">
-            <button>Send</button>
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
         </div>
     </div>
 
@@ -342,7 +342,8 @@
       }
     </script>
 
-
-
+    <!-- Link Chatbot JavaScript -->
+    <script src="scripts/chatbot.js"></script>
+    
   </body>
 </html>

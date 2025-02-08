@@ -425,15 +425,15 @@ body {
   bottom: 20px; /* Distance from bottom */
   right: 20px;  /* Sticks to the right */
   z-index: 1000; /* Ensures it stays above content */
-  background: #fff;
+  background: white;
   border-radius: 50px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
   width: 60px;
   height: 60px;
 }
@@ -448,6 +448,7 @@ body {
 /* Hover Effect */
 .chatbot-widget:hover {
   transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Chatbot Box (Initially Hidden) */
@@ -455,9 +456,9 @@ body {
   position: fixed;
   bottom: 90px; /* Above the chatbot button */
   right: 20px;
-  width: 300px;
-  height: 400px;
-  background: #fff;
+  width: 320px;
+  height: 450px;
+  background: white;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   display: none; /* Hidden by default */
@@ -465,6 +466,7 @@ body {
   z-index: 999;
   overflow: hidden;
   animation: fadeIn 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Chatbox Header */
@@ -477,6 +479,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 /* Close Button */
@@ -486,15 +490,22 @@ body {
   color: white;
   font-size: 18px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Chatbox Body */
+.chatbox-close:hover {
+  transform: scale(1.2);
+}
+
+/* Chatbox Body (Messages) */
 .chatbox-body {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   overflow-y: auto;
   font-size: 14px;
   color: #333;
+  background: #f9f9f9;
+  max-height: 330px; /* Prevents height overflow */
 }
 
 /* Chatbox Input */
@@ -503,6 +514,7 @@ body {
   border-top: 1px solid #ddd;
   display: flex;
   align-items: center;
+  background: white;
 }
 
 .chatbox-footer input {
@@ -511,6 +523,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
+  outline: none;
 }
 
 .chatbox-footer button {
@@ -521,6 +534,11 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.chatbox-footer button:hover {
+  background: #005ecb;
 }
 
 /* Animation */
