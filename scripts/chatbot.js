@@ -2,11 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatboxMessages = document.getElementById("chatbox-messages");
     const sendMessageButton = document.querySelector(".chatbox-footer button");
     const userInput = document.getElementById("user-input");
-    
+
     let chatbotData = {};
     let datasetLoaded = false;
+    let conversationHistory = [];
 
-    // Load Chatbot Data from JSON
+    // Load Chatbot Dataset
     fetch("scripts/chatbot_dataset.json")
         .then(response => response.json())
         .then(data => {
@@ -25,25 +26,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         chatboxMessages.innerHTML += `<p><strong>You:</strong> ${userQuestion}</p>`;
         userInput.value = "";
-
         chatboxMessages.innerHTML += `<p id="typing-animation"><em>Chatbot is typing...</em></p>`;
         chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
 
         setTimeout(() => {
             document.getElementById("typing-animation").remove();
             let botResponse = getBestMatch(userQuestion) || chatbotData["default"];
-            botResponse = formatResponse(botResponse);
+            botResponse = formatResponse(botResponse, userQuestion);
             chatboxMessages.innerHTML += `<p><strong>Chatbot:</strong><br>${botResponse.replace(/\n/g, "<br>")}</p>`;
             chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
-        }, Math.floor(Math.random() * 1000) + 1000);
+
+            conversationHistory.push(userQuestion);
+            if (conversationHistory.length > 5) conversationHistory.shift();
+        }, Math.floor(Math.random() * 1000) + 500);
     }
 
     function getBestMatch(input) {
         input = input.toLowerCase().trim();
         if (!datasetLoaded) return null;
 
+        if (chatbotData[input]) return chatbotData[input];
+
         let bestMatch = null;
         let highestScore = 0;
+
         Object.keys(chatbotData).forEach(question => {
             let score = similarityScore(input, question.toLowerCase());
             if (score > highestScore) {
@@ -52,34 +58,57 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        return highestScore > 0.40 ? chatbotData[bestMatch] : findSimilarQuestion(input);
+        return highestScore > 0.45 ? chatbotData[bestMatch] : handleContextualQuestions(input);
     }
 
-    function findSimilarQuestion(input) {
-        const helpResponses = [
-            "I can assist you with cybercrime-related queries. Try asking about DDoS attacks, phishing, or online scams.",
-            "Need help? You can ask about common scams, how to report cybercrime, or ways to stay safe online.",
-            "I'm here to help! Ask me about online security, scam prevention, or digital safety tips.",
-            "Cybersecurity is important! I can answer questions about fraud, identity theft, and hacking threats."
-        ];
-        
-        if (input.includes("help") || input.includes("assist")) {
-            return helpResponses[Math.floor(Math.random() * helpResponses.length)];
+    function handleContextualQuestions(input) {
+        let lastQuestion = conversationHistory[conversationHistory.length - 1] || "";
+
+        if (input === "yes" || input === "tell me more") {
+            return chatbotData[lastQuestion] || "Can you clarify what you want to know more about?";
         }
-        
+        if (input.includes("help") || input.includes("assist")) {
+            return "I'm here to help! Ask me about online scams, cybercrime laws, or how to report fraud.";
+        }
         if (input.includes("example") || input.includes("like what")) {
             return "You can ask me things like 'What is phishing?', 'How do I report a scam?', or 'What are the signs of a fraudulent website?'";
         }
-        
-        return "❓ I'm not sure about that. Try asking something related to cybercrime, online scams, or security.";
+        if (input.includes("explain") && lastQuestion) {
+            return `Sure! Let me explain '${lastQuestion}' in a simpler way: ${chatbotData[lastQuestion]}`;
+        }
+        if (input.includes("joke")) {
+            return "😂 Here's one: Why do hackers love dark mode? Because the light theme exposes too much data!";
+        }
+        if (input.includes("insight") || input.includes("tip")) {
+            return "💡 Cybersecurity Tip: Always use multi-factor authentication (MFA) to secure your accounts.";
+        }
+
+        return "❓ I didn't quite get that. Could you try rephrasing your question? 😊";
     }
 
     function formatResponse(response) {
         return response
+            // ✅ Convert bullet points
+            .replace(/- /g, "✅ ") 
+            .replace(/• /g, "✅ ") 
+            .replace(/● /g, "✅ ") 
             .replace(/✅/g, "✅ ")
             .replace(/⚠️/g, "⚠️ ")
             .replace(/💡/g, "💡 ")
-            .replace(/\n\n/g, "<br><br>") // Ensure line breaks render properly
+
+            // 🔹 Bold key phrases before colons and dashes
+            .replace(/(^|\n)([^:\n]+):/g, '$1<strong>$2</strong>:')
+            .replace(/(^|\n)([^-\n]+) - /g, '$1<strong>$2</strong> - ')
+
+            // 🔹 Bold numbered lists (1., 2., 3., etc.)
+            .replace(/(^|\n)(\d+)\./g, '$1<strong>$2.</strong>')
+
+            // 🔹 Bold specific keywords
+            .replace(/(TIP:|Tip:)/g, "<strong>💡 TIP:</strong>")
+            .replace(/(WARNING:|Warning:)/g, "<strong>⚠️ WARNING:</strong>")
+            .replace(/(NOTE:|Note:)/g, "<strong>📌 NOTE:</strong>")
+
+            .replace(/\n\n/g, "<br><br>")
             .replace(/\n/g, "<br>");
     }
 
@@ -87,9 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let longer = str1.length > str2.length ? str1 : str2;
         let shorter = str1.length > str2.length ? str2 : str1;
         let longerLength = longer.length;
-
         if (longerLength === 0) return 1.0;
-
         return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
     }
 
