@@ -43,36 +43,51 @@
 
 
   <!-- Main Content -->
-  <section class="report-page">
+  <!-- Hero Section -->
+  <section class="cybercrime-intro">
     <div class="container">
-      <h1>Have anything to report?</h1>
-      <p>Here's a step-by-step guide in reporting cybercrime activities in your area.</p>
-      <a href="#" class="quiz-btn">Take a quiz</a>
-    </div>
-  </section>
+      <div class="hero-left">
+        <h1>What is Cybercrime?</h1>
+        <p class="p1"><p>Cybercrime includes illegal activities carried out using the internet or digital systems, from online scams to hacking and identity theft. With cyber threats evolving daily, knowing how to spot and prevent them is your first line of defense—explore this guide to stay protected.</p>
   
-  <section class="steps-section container">
-    <div class="step-card">
-      <img src="../assets/icons/identify.png" alt="Step 1">
-      <h3>Step 1</h3>
-      <p>Identify the type of cybercrime you want to report.</p>
+      </div>
+      <div class="hero-right">
+        <h1>Why it Matters in Today’s Generation?</h1>
+        <p> In a world where almost everything is connected online, cybercrime is no longer just a threat—it’s a reality affecting millions. From financial fraud to data breaches, understanding cyber risks is essential for safeguarding yourself and your community.</p>
+
+        <p> Are you prepared for the digital dangers ahead? Why not take a quick assessment? 
+          Test your knowledge and see how well you understand cyber threats.</p>
+
+        <a href="#" class="quiz-btn">Take a Quick Assessment</a>
+
+      </div>
     </div>
-    <div class="step-card">
-      <img src="../assets/icons/cevidence.png" alt="Step 2">
-      <h3>Step 2</h3>
-      <p>Collect all evidence and documentation related to the crime.</p>
-    </div>
-    <div class="step-card">
-      <img src="../assets/icons/contactcop.png" alt="Step 3">
-      <h3>Step 3</h3>
-      <p>Contact the appropriate local authorities or agencies.</p>
-    </div>
-    <div class="step-card">
-      <img src="../assets/icons/ensurereport.png" alt="Step 4">
-      <h3>Step 4</h3>
-      <p>Follow up and ensure that your report is being processed.</p>
-    </div>
-  </section>
+</section>
+
+<section class="cybercrime-guides">
+  <div class="container">
+      <h2>TYPES OF CYBERCRIME</h2>
+      <p>Select a category below to learn more about different types of cybercrimes and how to stay safe.</p>
+      <div class="guide-grid">
+          <a href="financial-cybercrime.html" class="guide-card">
+              <img src="../assets/icons/personalCC.png" alt="Financial Cybercrime">
+              <h3>Personal Cybercrimes</h3>
+          </a>
+          <a href="personal-cybercrime.html" class="guide-card">
+              <img src="../assets/icons/governmentCC.png" alt="Personal Cybercrime">
+              <h3>Government & Critical Infrastructure Cybercrimes</h3>
+          </a>
+          <a href="corporate-cybercrime.html" class="guide-card">
+              <img src="../assets/icons/corporateCC.png" alt="Corporate Cybercrime">
+              <h3>Corporate/Business Cybercrimes</h3>
+          </a>
+          <a href="emerging-threats.html" class="guide-card">
+              <img src="../assets/icons/emergingCC.png" alt="Emerging Threats">
+              <h3>Emerging Cybercrime Threats</h3>
+          </a>
+      </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="footer">
@@ -97,9 +112,6 @@
         </ul>
       </div>
 
-      <div class="logo">
-        <a href="../index.html"><img src="../logo/logo2.png" alt="ClickSmart"></a>
-      </div>
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
@@ -113,21 +125,21 @@
     <div class="chatbot-widget" onclick="toggleChatbox()">
         <img src="../assets/icons/bot.png" alt="Chat">
     </div>
-    
-      <!-- Chatbot Box -->
-      <div class="chatbox-container" id="chatbox">
-          <div class="chatbox-header">
-              ClickSmart Chatbot
-              <button class="chatbox-close" onclick="toggleChatbox()">✖</button>
-          </div>
-          <div class="chatbox-body">
-              <p>Hi! How can I assist you today?</p>
-          </div>
-          <div class="chatbox-footer">
-              <input type="text" placeholder="Type a message...">
-              <button>Send</button>
-          </div>
-      </div>
+
+    <!-- Chatbot Box -->
+    <div class="chatbox-container" id="chatbox">
+        <div class="chatbox-header">
+            ClickSmart Chatbot
+            <button class="chatbox-close" onclick="toggleChatbox()">✖</button>
+        </div>
+        <div class="chatbox-body" id="chatbox-messages">
+            <p>👋 Hi! Ask me anything about cybercrime.</p>
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
   
       <!-- JavaScript -->
       <script>
@@ -140,20 +152,35 @@
           });
         });
       </script>
-  
-       <script>
-          function toggleChatbox() {
-        var chatbox = document.getElementById("chatbox");
-        if (chatbox.style.display === "none" || chatbox.style.display === "") {
-            chatbox.style.display = "flex"; // Show Chatbox
-        } else {
-            chatbox.style.display = "none"; // Hide Chatbox
-          }
+
+      <script>
+        function adjustHeroHeight() {
+            let heroSection = document.querySelector('.cybercrime-intro');
+            let viewportHeight = window.innerHeight;
+            heroSection.style.minHeight = viewportHeight + 'px';
         }
-        function toggleChatbot() {
-            alert("Chatbot feature coming soon!"); // Replace this with actual chatbot code
-        }
+
+        window.addEventListener('resize', adjustHeroHeight);
+        window.addEventListener('load', adjustHeroHeight);
       </script>
+
+  
+      <script>
+        function toggleChatbox() {
+      var chatbox = document.getElementById("chatbox");
+      if (chatbox.style.display === "none" || chatbox.style.display === "") {
+          chatbox.style.display = "flex"; // Show Chatbox
+      } else {
+          chatbox.style.display = "none"; // Hide Chatbox
+        }
+      }
+      function toggleChatbot() {
+          alert("Chatbot feature coming soon!");
+      }
+     </script>
+
+          <!-- Link Chatbot JavaScript -->
+     <script src="scripts/chatbot.js"></script>
 
 
 </body>

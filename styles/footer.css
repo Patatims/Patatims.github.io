@@ -55,21 +55,6 @@
   color: #d62839;
 }
 
-/* Center the Logo */
-.footer .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.footer .logo img {
-  display: block;
-  max-height: 100px;
-  width: auto;
-}
-
 /* Footer Bottom */
 .footer-bottom {
   text-align: center;
@@ -93,12 +78,4 @@
       width: 100%;
   }
 
-  .footer .logo {
-      justify-content: center;
-      margin-bottom: 1rem;
-  }
-
-  .footer .logo img {
-      max-height: 80px;
-  }
 }
