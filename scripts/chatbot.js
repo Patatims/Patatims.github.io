@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let conversationHistory = [];
 
     // Load Chatbot Dataset
-    fetch("scripts/chatbot_dataset.json")
+    fetch("../scripts/chatbot_dataset.json")
         .then(response => response.json())
         .then(data => {
             chatbotData = data;
