@@ -188,7 +188,12 @@ body {
 .cybercriminal-card h3 {
   font-size: 1.2rem;
   color: #333;
-  pointer-events: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px; /* Adjust based on your layout */
+  line-height: 1.2;
 }
 
 /* Hide descriptions initially */
