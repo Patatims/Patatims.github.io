@@ -300,75 +300,119 @@ body {
 
 .cybercriminals-note {
   font-size: 1rem;
+  position: relative; 
   text-align: center;
+  align-items: center;
   margin-top: 25px;
   color: #ddd; 
   max-width: 800px;
   line-height: 1.6;
 }
 
-/*
-======================================
-       C.Crimes GUIDES SECTION
-======================================
+/* ======================================
+      Cybercrime Guide Section
+====================================== */
 */
+
+
 .cybercrime-guides {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
-  padding: 50px 20px;
+  padding: 60px 20px;
   background: url('../assets/background/typesCBG.png') no-repeat center center;
   background-size: cover;
-  min-height: 60vh;
+  min-height: 70vh;
 }
 
+/* === Title & Paragraph Styles === */
 .cybercrime-guides h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
   color: #111;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 .cybercrime-guides p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #555;
+  font-size: 1.3rem;
+  color: #333;
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  text-align: center; /* Ensures full centering */
+  justify-content: center;
 }
 
-/* Grid Layout for Guide Cards */
+/* === Grid Layout for Guide Cards === */
 .guide-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 30px;
   width: 100%;
   max-width: 1200px;
+  justify-content: center;
 }
 
-.guide-card {
+/* === Individual Guide Wrapper === */
+.guide-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+/* === Guide Card (Image Only) === */
+.guide-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-decoration: none;
-  color: black;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 260px;
+  height: 150px;
 }
 
+/* === Hover Effects: Soft Glow & Scale === */
 .guide-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
+/* === Card Images Only === */
 .guide-card img {
-  width: 80px;
-  margin-bottom: 10px;
+  width: 85px;
+  transition: transform 0.3s ease-in-out;
 }
 
-.guide-card h3 {
+/* === Image Hover Effect === */
+.guide-card:hover img {
+  transform: scale(1.1);
+}
+
+/* === Separated Clickable Text Below the Card === */
+.guide-text {
+  text-align: center;
   font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 12px;
+  color: #222;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+/* Make Text Clickable */
+.guide-text:hover {
+  color: #d32f2f; /* Change text color on hover */
 }
 
 /*
