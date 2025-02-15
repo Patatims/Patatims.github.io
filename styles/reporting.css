@@ -317,6 +317,7 @@ body {
 /* ======================================
       Cybercrime Guide Section
 ====================================== */
+
 .cybercrime-guides {
   display: flex;
   flex-direction: column;
@@ -729,7 +730,7 @@ body {
   }
 
   .guide-card img {
-    width: 75px;
+    width: 110px;
   }
 
   .guide-text {
