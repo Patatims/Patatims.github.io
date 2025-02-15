@@ -312,9 +312,6 @@ body {
 /* ======================================
       Cybercrime Guide Section
 ====================================== */
-*/
-
-
 .cybercrime-guides {
   display: flex;
   flex-direction: column;
@@ -329,7 +326,7 @@ body {
 
 /* === Title & Paragraph Styles === */
 .cybercrime-guides h2 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: #111;
   font-weight: bold;
   text-transform: uppercase;
@@ -339,11 +336,11 @@ body {
 .cybercrime-guides p {
   font-size: 1.3rem;
   color: #333;
-  max-width: 800px;
+  max-width: 800px; 
   line-height: 1.6;
-  margin-bottom: 40px;
-  text-align: center; /* Ensures full centering */
-  justify-content: center;
+  margin: 0 auto 40px auto; 
+  text-align: center;
+  display: block; 
 }
 
 /* === Grid Layout for Guide Cards === */
@@ -356,15 +353,16 @@ body {
   justify-content: center;
 }
 
-/* === Individual Guide Wrapper === */
+/* === Individual Guide Wrapper (Card + Text) === */
 .guide-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 10px;
 }
 
-/* === Guide Card (Image Only) === */
+/* === Guide Card === */
 .guide-card {
   display: flex;
   justify-content: center;
@@ -377,12 +375,12 @@ body {
   text-decoration: none;
   border: 2px solid rgba(0, 0, 0, 0.05);
   width: 100%;
-  max-width: 260px;
-  height: 150px;
+  max-width: 560px;
+  height: 250px;
 }
 
 /* === Hover Effects: Soft Glow & Scale === */
-.guide-card:hover {
+.guide-wrapper:hover .guide-card {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
   border: 2px solid rgba(0, 0, 0, 0.2);
@@ -390,12 +388,12 @@ body {
 
 /* === Card Images Only === */
 .guide-card img {
-  width: 85px;
+  width: 185px;
   transition: transform 0.3s ease-in-out;
 }
 
 /* === Image Hover Effect === */
-.guide-card:hover img {
+.guide-wrapper:hover .guide-card img {
   transform: scale(1.1);
 }
 
@@ -404,15 +402,19 @@ body {
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 12px;
   color: #222;
   transition: color 0.3s ease-in-out;
   text-decoration: none;
 }
 
-/* Make Text Clickable */
+/* Make Text Clickable & Hover Effect */
 .guide-text:hover {
   color: #d32f2f; /* Change text color on hover */
+}
+
+/* Remove default blue underline from links */
+.guide-text {
+  text-decoration: none;
 }
 
 /*
