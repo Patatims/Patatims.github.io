@@ -55,13 +55,13 @@ body {
 }
 
 .hero-left {
-  width: 55%;
+  width: 42%;
   max-width: 800px;
 }
 
 .hero-left h1,
 .hero-right h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 
@@ -74,7 +74,7 @@ body {
 
 /* Ensure .hero-right is on the second row and aligned to the right */
 .hero-right {
-  width: 55%;
+  width: 45%;
   max-width: 700px;
   justify-self: end; /* Aligns to the right */
   text-align: right;
@@ -96,9 +96,220 @@ body {
 .cybercrime-intro .quiz-btn:hover {
   background: #d62839;
 }
+
+/* 
+======================================
+    Cybercriminals Guide Section
+======================================
+*/
+.cybercriminals {
+  text-align: center;
+  padding: 50px 20px;
+  background: url('../assets/background/cyberCriminalBG.png') no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100vh; /* Prevents shrinking */
+  transition: background 0.3s ease-in-out;
+}
+
+/* Dim Background When a Card is Active */
+.cybercriminals.active-bg {
+  background: rgba(0, 0, 0, 0.1);
+  padding-bottom: 120px; /* Ensures enough space for expanded card */
+}
+
+/* Title & Description Styling */
+.cybercriminals h2 {
+  color: #f9f9f9;
+  font-size: 3.8rem;
+  text-shadow: 0 0 10px rgba(0, 150, 255, 0.8); /* Blue neon glow effect */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.cybercriminals p {
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease-in-out;
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.6); /* Soft white glow */
+}
+
+/* Grid Layout */
+.cybercriminal-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+  padding-top: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+/* Individual Cards */
+.cybercriminal-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, width 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  height: auto;
+  min-height: 150px;
+  width: 180px; /* Default small size */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+}
+
+/* HOVER EFFECTS ON CARD */
+.cybercriminal-card:hover {
+  transform: scale(1.08); /* Slightly enlarges the card */
+  box-shadow: 0px 0px 20px rgba(0, 150, 255, 0.7); /* Blue glowing effect */
+  background: rgba(255, 255, 255, 0.95); /* Slightly darkens card */
+}
+
+/* Image inside Card */
+.cybercriminal-card img {
+  width: 80px;
+  border-radius: 25%;
+  margin-bottom: 10px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Card Title */
+.cybercriminal-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  pointer-events: none;
+}
+
+/* Hide descriptions initially */
+.cybercriminal-card p {
+  display: none; /* Hides all paragraph text */
+}
+
+/* Show descriptions when a card is active */
+.cybercriminal-card.active p {
+  display: block; /* Show description only on active card */
+}
+
+.cyber-info {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  padding: 0;
+  visibility: hidden;
+}
+
+/* Ensure only the active card expands fully */
+.cybercriminal-card.active {
+  width: 800px;
+  position: relative; /* Ensure it expands inside the section */
+  z-index: 20;
+  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  transition: width 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* Ensure active card title styling */
+.cybercriminal-card.active h3 {
+  font-size: 2rem;
+  color: #d32f2f; /* Red highlight for active card title */
+  font-weight: bold;
+}
+
+/* Ensure active card description styling */
+.cybercriminal-card.active .cyber-description {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+/* Expand only the clicked card's content */
+.cybercriminal-card.active .cyber-info {
+  opacity: 1;
+  max-height: 1000px;
+  padding: 10px;
+  visibility: visible;
+  width: 90%;
+  font-size: 1.2rem;
+  color: #222; /* Darker text for readability */
+}
+
+/* When a card is selected, dim and disable other cards */
+.cybercriminal-grid:has(.active) .cybercriminal-card:not(.active) {
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Prevent bottom content from being pushed */
+.cybercriminals.active-bg {
+  height: auto;
+  overflow: hidden;
+}
+
+/* Ensure only the section title and general paragraph are dimmed */
+.cybercriminals.active-bg h2,
+.cybercriminals.active-bg p {
+  opacity: 0.1;
+}
+
+/* Keep active card text fully visible */
+.cybercriminal-card.active .cyber-description,
+.cybercriminal-card.active .cyber-info {
+  opacity: 1 !important;
+  color: #333 !important; /* Ensure visibility */
+}
+
+/* Prevent Title & Other Content From Moving */
+.cybercriminals {
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Dynamically Adjust Bottom */
+.cybercriminals.active-bg {
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 100px; /* Adds extra space */
+}
+
+/* Prevent the active card from pushing down other elements */
+.cybercriminals.active-bg .cybercriminal-grid {
+  position: relative; /* Prevents absolute positioning issue */
+  transform: none; /* Removes unnecessary transform */
+}
+
+.cybercriminals-note {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 25px;
+  color: #ddd; 
+  max-width: 800px;
+  line-height: 1.6;
+}
+
 /*
 ======================================
-         C.C GUIDES SECTION
+       C.Crimes GUIDES SECTION
 ======================================
 */
 .cybercrime-guides {
@@ -317,6 +528,44 @@ body {
     margin-top: 1.5rem; /* Adjust spacing */
   }
 
+  .cybercriminals h2 {
+    font-size: 3rem;
+  }
+
+  .cybercriminals p {
+    font-size: 1.1rem;
+  }
+
+  .cybercriminal-grid {
+    gap: 15px;
+  }
+
+  .cybercriminal-card {
+    width: 160px;
+    padding: 12px;
+  }
+
+  .cybercriminal-card img {
+    width: 70px;
+  }
+
+  .cybercriminal-card.active {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .cybercriminal-card.active h3 {
+    font-size: 1.8rem;
+  }
+
+  .cybercriminal-card.active .cyber-description {
+    font-size: 1.3rem;
+  }
+
+  .cybercriminal-card.active .cyber-info {
+    font-size: 1rem;
+  }
+
   .chatbot-widget {
     display: none;
   }
@@ -350,11 +599,109 @@ body {
     margin-top: 1.5rem;
   }
 
+  .cybercriminals h2 {
+    font-size: 2.5rem;
+  }
+
+  .cybercriminals p {
+    font-size: 1rem;
+  }
+
+  .cybercriminal-grid {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cybercriminal-card {
+    width: 140px;
+    padding: 10px;
+  }
+
+  .cybercriminal-card img {
+    width: 65px;
+  }
+
+  .cybercriminal-card h3 {
+    font-size: 1rem;
+  }
+
+  .cybercriminal-card.active {
+    width: 95%;
+    padding: 18px;
+  }
+
+  .cybercriminal-card.active h3 {
+    font-size: 1.6rem;
+  }
+
+  .cybercriminal-card.active .cyber-description {
+    font-size: 1.2rem;
+  }
+
+  .cybercriminal-card.active .cyber-info {
+    font-size: 0.95rem;
+  }
+
+  .cybercriminals-note {
+    font-size: 0.95rem;
+    padding: 0 15px;
+  }
+
   .chatbot-widget {
     display: none;
   }
 
 .chatbox-container {
     display: none;
+  }
+}
+
+/* For extra small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .cybercriminals {
+    padding: 40px 10px;
+  }
+
+  .cybercriminals h2 {
+    font-size: 2.2rem;
+  }
+
+  .cybercriminals p {
+    font-size: 0.95rem;
+  }
+
+  .cybercriminal-grid {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cybercriminal-card {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .cybercriminal-card img {
+    width: 60px;
+  }
+
+  .cybercriminal-card h3 {
+    font-size: 1rem;
+  }
+
+  .cybercriminal-card.active {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .cybercriminal-card.active h3 {
+    font-size: 1.4rem;
+  }
+
+  .cybercriminal-card.active .cyber-description {
+    font-size: 1.1rem;
+  }
+
+  .cybercriminal-card.active .cyber-info {
+    font-size: 0.9rem;
   }
 }
