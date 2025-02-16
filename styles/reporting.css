@@ -27,22 +27,22 @@ body {
 
 /*
 ======================================
-              HERO Section
+              HERO SECTION
 ======================================
 */
 .cybercrime-intro {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto auto; /* Two rows */
-  grid-template-columns: 1fr; /* Single column to force stacking */
+  min-height: 10 0vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 5%;
+  padding: 2rem 5%;
   background: url('../assets/background/cyberGBG.png') no-repeat center;
   background-size: cover;
   color: #ffffff;
+  font-weight: 350;
 }
 
 /* Vignette Effect */
@@ -53,87 +53,122 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(5, 5, 5, 0.55) 100%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 60%, rgba(5, 5, 5, 0.55) 100%);
   z-index: 0;
 }
 
 .cybercrime-intro .container {
-  max-width: 1500px;
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  display: grid;
-  grid-template-rows: auto auto; /* Two rows */
+  display: flex;
+  flex-direction: column;
   position: relative;
+  align-items: center;
 }
 
-.hero-left {
-  width: 42%;
-  max-width: 800px;
+/* Centered Hero Section */
+.hero-center {
+  max-width: 1350px;
+  text-align: center;
+  position: relative;
+  padding: 30px 50px;
+  border-radius: 12px;
+  margin-top: 10px;
 }
 
-.hero-left h1,
-.hero-right h1 {
-  font-size: 3.7rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4), 
-  0 0 10px rgba(255, 255, 255, 0.3), 
-  0 0 15px rgba(255, 255, 255, 0.2);
-  animation: softGlow 5s infinite alternate;
-  }
-
-/* Soft Glow Animation */
-@keyframes softGlow {
-0% {
-text-shadow: 0 0 4px rgba(255, 255, 255, 0.3), 
-    0 0 8px rgba(255, 255, 255, 0.2), 
-    0 0 12px rgba(255, 255, 255, 0.1);
-  } 
-100% {
-text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 
-    0 0 12px rgba(255, 255, 255, 0.4), 
-    0 0 18px rgba(255, 255, 255, 0.3);
-  }
-  }
-
-.hero-left p,
-.hero-right p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem; /* Adds spacing below paragraph */
-}
-
-/* Ensure .hero-right is on the second row and aligned to the right */
-.hero-right {
-  width: 45%;
-  max-width: 700px;
-  justify-self: end; /* Aligns to the right */
-  text-align: right;
-}
-
-/* Adjust button placement */
-.cybercrime-intro .quiz-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 1.2rem;
-  background: #e63946;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
+/* "What is Cybercrime?" Title */
+.hero-center h1 {
+  font-size: 3.8rem;
   font-weight: bold;
-  transition: background 0.3s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.2s ease-in-out;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0, 150, 255, 0.8);
+  background: rgba(0, 0, 0, 0.60);
+  padding: 35px 100px; 
+  width: 100%;
 }
 
-.cybercrime-intro .quiz-btn:hover {
-  background: #b92d3a;
+/* Paragraph Under Hero Title */
+.hero-center p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  text-align: left;
+  align-items: center;
+  width: 100%;
+  margin-top: 0 auto;
+  padding-left: 15px;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-center p::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 7px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+  margin-top: 35px;
+}
+
+/* Content Section (Previously Left & Right Columns) */
+.hero-content {
+  max-width: 1250px;
+  width: 100%;
+  text-align: left;
+  margin-top: 0rem;
+  padding-left: 15px; /* Aligns with hero-center p */
+}
+
+/* Headings */
+.hero-content h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-shadow: 0 0 10px rgba(0, 150, 255, 0.8);
+}
+
+/* Paragraphs */
+.hero-content p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* Quiz Section */
+.hero-quiz {
+  max-width: 1250px;
+  text-align: left;
+  margin-top: 3rem;
+}
+
+/* Quiz Text */
+.hero-quiz p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  width: 80%;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Quiz Button */
+.hero-quiz .quiz-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  margin-bottom: 60px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: #d32f2f;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.hero-quiz .quiz-btn:hover {
+  background: #b71c1c;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(230, 57, 70, 0.3);
-}
-
-.cybercrime-intro .quiz-btn:active {
-  transform: translateY(0px);
-  box-shadow: none;
-  outline: 3px solid #ffffff;
-  outline-offset: 1.5px;
+  box-shadow: 0 0 12px rgba(230, 57, 70, 0.6);
 }
 
 /* 
@@ -633,28 +668,119 @@ text-shadow: 0 0 6px rgba(255, 255, 255, 0.5),
   to { opacity: 1; transform: translateY(0); }
 }
 
-
-@media (max-width: 1024px) {
+/* Default - Desktop View (No changes needed) */
+@media (max-width: 1440px) {
   .cybercrime-intro .container {
-    display: flex;
-    flex-direction: column;
+    max-width: 1200px;
+  }
+}
+
+/* Large Screens (Max: 1200px) */
+@media (max-width: 1300px) {
+  .cybercrime-intro {
+    text-align: center;
     align-items: center;
+  }
+
+  .hero-center {
+    max-width: 1000px;
+    padding: 25px 50px;
     text-align: center;
   }
 
-  .hero-left,
-  .hero-right {
+  .hero-center h1 {
+    font-size: 3.5rem;
+    padding: 30px 60px;
+  }
+
+  .hero-center p {
+    font-size: 1.4rem;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 80%;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .hero-content h2 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero-quiz {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-quiz p {
+    font-size: 1.3rem;
     width: 90%;
     text-align: center;
-    justify-self: center;
   }
 
-  .hero-right {
-    align-items: center; /* Center align text inside */
+  .hero-quiz .quiz-btn {
+    margin-top: 3cm;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Tablets (Max: 1024px) */
+@media (max-width: 1024px) {
+  .cybercrime-intro {
+    padding: 4rem 5%;
+    text-align: center;
   }
 
-  .cybercrime-intro .quiz-btn {
-    margin-top: 1.5rem; /* Adjust spacing */
+  .hero-center {
+    max-width: 1000px;
+    padding: 25px 50px;
+  }
+
+  .hero-center h1 {
+    font-size: 3.2rem;
+    padding: 25px 80px;
+  }
+
+  .hero-center p {
+    font-size: 1.4rem;
+    width: 95%;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 95%;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+
+  .hero-quiz {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-quiz p {
+    width: 90%;
+    text-align: center;
   }
 
   .cybercriminals h2 {
@@ -718,27 +844,57 @@ text-shadow: 0 0 6px rgba(255, 255, 255, 0.5),
 }
 
 @media (max-width: 768px) {
-  .cybercrime-intro h1 {
-    font-size: 2.5rem;
+  .cybercrime-intro {
+    padding: 3rem 5%;
   }
 
-  .cybercrime-intro p {
-    font-size: 1.1rem;
+  .hero-center {
+    max-width: 100%;
+    padding: 20px;
   }
 
-  .hero-left,
-  .hero-right {
+  .hero-center h1 {
+    font-size: 2.8rem;
+    padding: 20px 50px;
+  }
+
+  .hero-center p {
+    font-size: 1.3rem;
+    width: 100%;
+  }
+
+  .hero-content {
     width: 100%;
     text-align: center;
-    justify-self: center;
+    padding-left: 0;
   }
 
-  .hero-right {
-    align-items: center;
+  .hero-content h2 {
+    font-size: 2rem;
   }
 
-  .cybercrime-intro .quiz-btn {
-    margin-top: 1.5rem;
+  .hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .hero-quiz {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-quiz p {
+    font-size: 1.3rem;
+    width: 90%;
+    text-align: center;
+  }
+
+  .hero-quiz .quiz-btn {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    
   }
 
   .cybercriminals h2 {
@@ -832,7 +988,65 @@ text-shadow: 0 0 6px rgba(255, 255, 255, 0.5),
 }
 
 /* For extra small screens (max-width: 480px) */
-@media (max-width: 480px) {
+@media (max-width: 600px) or (max-width: 480px) {
+  .cybercrime-intro {
+    padding: 2rem 4%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-center {
+    max-width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-center h1 {
+    font-size: 2.6rem;
+    padding: 20px 30px;
+  }
+
+  .hero-center p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero-quiz {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-quiz p {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-quiz .quiz-btn {
+    margin-top: 40px;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+  }
+
   .cybercriminals {
     padding: 40px 10px;
   }
