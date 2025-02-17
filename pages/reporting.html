@@ -228,48 +228,470 @@
           <p>Cybercrime comes in many forms. Select a category below to understand its impact and how to stay safe.</p>
           <div class="guide-grid">
               <!-- Personal Cybercrimes -->
-              <div class="guide-wrapper">
-                  <a href="../subpages/personal-cybercrime.html" class="guide-card">
+              <div class="guide-wrapper" data-type="personal">
+                  <div class="guide-card">
                       <img src="../assets/icons/personalCC.png" alt="Personal Cybercrime">
-                  </a>
-                  <a href="../subpages/personal-cybercrime.html" class="guide-text">Personal Cybercrimes</a>
+                  </div>
+                  <p class="guide-text">Personal Cybercrimes</p>
               </div>
 
               <!-- Government & Critical Infrastructure Cybercrimes -->
-              <div class="guide-wrapper">
-                  <a href="government-cybercrime.html" class="guide-card">
+              <div class="guide-wrapper" data-type="government">
+                  <div class="guide-card">
                       <img src="../assets/icons/governmentCC.png" alt="Government Cybercrime">
-                  </a>
-                  <a href="government-cybercrime.html" class="guide-text">Government & Critical Infrastructure Cybercrimes</a>
+                  </div>
+                  <p class="guide-text">Government & Critical Infrastructure Cybercrimes</p>
               </div>
 
               <!-- Corporate/Business Cybercrimes -->
-              <div class="guide-wrapper">
-                  <a href="corporate-cybercrime.html" class="guide-card">
+              <div class="guide-wrapper" data-type="corporate">
+                  <div class="guide-card">
                       <img src="../assets/icons/corporateCC.png" alt="Corporate Cybercrime">
-                  </a>
-                  <a href="corporate-cybercrime.html" class="guide-text">Corporate/Business Cybercrimes</a>
+                  </div>
+                  <p class="guide-text">Corporate/Business Cybercrimes</p>
               </div>
 
               <!-- Emerging Cybercrime Threats -->
-              <div class="guide-wrapper">
-                  <a href="emerging-threats.html" class="guide-card">
+              <div class="guide-wrapper" data-type="emerging">
+                  <div class="guide-card">
                       <img src="../assets/icons/emergingCC.png" alt="Emerging Threats">
-                  </a>
-                  <a href="emerging-threats.html" class="guide-text">Emerging Cybercrime Threats</a>
+                  </div>
+                  <p class="guide-text">Emerging Cybercrime Threats</p>
               </div>
           </div>
+
           <div class="cybercrime-insight">
             <p>
               <strong>Empower Yourself Against Cybercrime:</strong>  
               Awareness is your first line of defense against cybercriminals.  
-              Understanding your rights under <strong>Philippine law</strong> helps you <strong>stay protected</strong> and <strong>take action</strong>. However, laws can only protect you if you know them.  
+              Understanding your rights under <strong>Philippine law</strong> helps you <strong>stay protected</strong> and <strong>take action</strong>.  
               <strong>The Cybercrime Prevention Act of 2012 (RA 10175)</strong> provides legal measures to combat digital crimes, ensuring accountability for online threats.  
               <a href="philippine-cyberlaws.html" class="learn-more-link"><strong>Click here</strong></a> to learn more about your rights.
             </p>
           </div>
       </div>
     </section>
+
+    <!-- MODAL STRUCTURE FOR EXPANDING CYBERCRIME DETAILS -->
+    <!-- 🔹 First Modal (Dynamically Populated) -->
+    <div id="cybercrime-modal" class="cybercrime-modal">
+      <div class="modal-content">
+          <h2 id="modal-title">Cybercrime Category</h2>
+          <p id="modal-description">Description of the selected cybercrime category.</p>
+          <div id="modal-grid" class="modal-grid"></div>
+      </div>
+    </div>
+
+    <!-- CYBERCRIME SECOND MODAL -->
+    <div id="cybercrime-second-modal" class="cybercrime-modal">
+      <div class="modal-content">
+        <div class="cybercrime-container">
+          
+        <!-- SCAMS & ONLINE FRAUD -->
+        <div class="cybercrime-details" id="scams-online-fraud">
+          <h2>Scams & Online Fraud</h2>
+          <p><strong>What is it?</strong><br>
+              Scammers trick victims into giving money or personal information through deception. This includes investment fraud, fake online stores, job scams, and romance scams.
+          </p>
+          <p><strong>Common Types of Scams:</strong></p>
+          <ul>
+              <li>Investment Scams (Ponzi, Pyramid Schemes)</li>
+              <li>Online Shopping Scams</li>
+              <li>Fake Job Offers</li>
+              <li>Lottery & Prize Scams</li>
+              <li>Romance Scams</li>
+          </ul>
+          <p><strong>Example Scenarios:</strong></p>
+          <ul>
+              <li>The KAPA Community Ministry International Scam stole over ₱50 billion from Filipinos.</li>
+              <li>Fake Shopee and Lazada sellers scammed thousands of buyers.</li>
+          </ul>
+          <p><strong>Why is it Personal Cybercrime?</strong></p>
+          <ul>
+              <li>✔ Targets individuals who voluntarily send money or personal information.</li>
+              <li>✔ Victims suffer financial loss directly.</li>
+              <li>✔ Scams manipulate personal trust.</li>
+          </ul>
+          <p><strong>How to Prevent It:</strong></p>
+          <ul>
+              <li>✅ Verify companies & sellers before transacting.</li>
+              <li>✅ Never send money to strangers online.</li>
+              <li>✅ Check official sources before responding to prize notifications.</li>
+          </ul>
+          <p><strong>Where to Report:</strong></p>
+          <ul>
+              <li>📌 PNP Anti-Cybercrime Group (PNP-ACG)</li>
+              <li>📌 Securities & Exchange Commission (SEC)</li>
+              <li>📌 DTI (for e-commerce scams)</li>
+          </ul>
+        </div>
+
+        <!-- FINANCIAL FRAUD -->
+        <div class="cybercrime-details" id="financial-fraud">
+          <h2>Financial Fraud</h2>
+          <p><strong>What is it?</strong><br>
+              Financial fraud occurs when criminals gain unauthorized access to banking details, credit card information, or e-wallet accounts to steal money.
+          </p>
+          <p><strong>Common Types of Financial Fraud:</strong></p>
+          <ul>
+              <li>Credit Card Fraud</li>
+              <li>Bank Account Takeover</li>
+              <li>ATM Skimming</li>
+              <li>E-Wallet Fraud</li>
+          </ul>
+          <p><strong>Example Scenarios:</strong></p>
+          <ul>
+              <li>A GCash phishing scam tricked victims into sharing OTP codes.</li>
+              <li>A victim’s BDO online banking account was hacked.</li>
+          </ul>
+          <p><strong>Why is it Personal Cybercrime?</strong></p>
+          <ul>
+              <li>✔ Directly affects an individual's finances.</li>
+              <li>✔ Unlike corporate fraud, financial fraud targets personal banking details.</li>
+              <li>✔ Criminals exploit personal digital security weaknesses.</li>
+          </ul>
+          <p><strong>How to Prevent It:</strong></p>
+          <ul>
+              <li>✅ Enable two-factor authentication (2FA) on banking apps.</li>
+              <li>✅ Never share your OTP (One-Time Password) with anyone.</li>
+              <li>✅ Monitor your bank transactions regularly.</li>
+          </ul>
+          <p><strong>Where to Report:</strong></p>
+          <ul>
+              <li>📌 Your bank’s fraud department</li>
+              <li>📌 PNP-ACG (for hacking cases)</li>
+          </ul>
+        </div>
+
+        <!-- IDENTITY THEFT -->
+        <div class="cybercrime-details" id="identity-theft">
+          <h2>Identity Theft</h2>
+          <p><strong>What is it?</strong><br>
+              Identity theft occurs when criminals steal personal information (name, ID, banking details) to impersonate victims and commit fraud.
+          </p>
+          <p><strong>Common Types of Identity Theft:</strong></p>
+          <ul>
+              <li>Loan Fraud</li>
+              <li>SIM Card Fraud</li>
+              <li>Fake Social Media Profiles</li>
+          </ul>
+          <p><strong>Example Scenarios:</strong></p>
+          <ul>
+              <li>A scammer used a stolen National ID to apply for bank loans.</li>
+              <li>Victims’ passport details were leaked in a data breach.</li>
+          </ul>
+          <p><strong>Why is it Personal Cybercrime?</strong></p>
+          <ul>
+              <li>✔ Criminals steal personal details to commit fraud.</li>
+              <li>✔ The financial or legal consequences directly harm the individual.</li>
+              <li>✔ Victims may suffer long-term consequences like legal or credit issues.</li>
+          </ul>
+          <p><strong>How to Prevent It:</strong></p>
+          <ul>
+              <li>✅ Shred personal documents before disposal.</li>
+              <li>✅ Check bank statements for suspicious activity.</li>
+              <li>✅ Use strong passwords for online banking & government accounts.</li>
+          </ul>
+          <p><strong>Where to Report:</strong></p>
+          <ul>
+              <li>📌 NBI Cybercrime Division</li>
+              <li>📌 PNP-ACG</li>
+          </ul>
+        </div>
+
+        <!-- PHISHING ATTACKS -->
+        <div class="cybercrime-details" id="phishing-attacks">
+          <h2>Phishing Attacks</h2>
+          <p><strong>What is it?</strong><br>
+              Phishing is a form of cybercrime where criminals trick victims into providing personal information, login credentials, or financial details.
+          </p>
+          <p><strong>Common Types of Phishing Attacks:</strong></p>
+          <ul>
+              <li>Email Phishing</li>
+              <li>Smishing (SMS Phishing)</li>
+              <li>Vishing (Voice Phishing)</li>
+          </ul>
+          <p><strong>Example Scenarios:</strong></p>
+          <ul>
+              <li>A fake BDO email asked customers to verify their accounts.</li>
+              <li>A smishing scam pretended to be from BIR to steal taxpayer info.</li>
+          </ul>
+          <p><strong>Why is it Personal Cybercrime?</strong></p>
+          <ul>
+              <li>✔ Targets individuals through emails, texts, or fake websites.</li>
+              <li>✔ The goal is to steal personal data (bank logins, passwords, ID numbers).</li>
+              <li>✔ Affects personal security rather than corporate or government systems.</li>
+          </ul>
+          <p><strong>How to Prevent It:</strong></p>
+          <ul>
+              <li>✅ Never click on suspicious links from emails or text messages.</li>
+              <li>✅ Verify with official customer support before providing personal details.</li>
+              <li>✅ Check email senders carefully (banks use official domains).</li>
+          </ul>
+          <p><strong>Where to Report:</strong></p>
+          <ul>
+              <li>📌 Banks & Financial Institutions</li>
+              <li>📌 PNP-ACG</li>
+          </ul>
+        </div>
+          
+          <!-- RANSOMWARE & MALWARE ATTACKS -->
+          <div class="cybercrime-details" id="ransomware-malware-attacks">
+            <h2>Ransomware & Malware Attacks</h2>
+            <p><strong>What is it?</strong><br>
+                Ransomware and malware are malicious software programs designed to steal data, spy on users, or lock files until a ransom is paid.
+            </p>
+            <p><strong>Common Types of Ransomware & Malware Attacks:</strong></p>
+            <ul>
+                <li>Ransomware – Locks a victim’s files and demands payment for recovery.</li>
+                <li>Spyware – Secretly monitors a victim’s online activity.</li>
+                <li>Trojans & Worms – Malicious programs that infect computers and spread across networks.</li>
+            </ul>
+            <p><strong>Example Scenarios:</strong></p>
+            <ul>
+                <li>Philippine hospitals and government agencies have been hit by ransomware attacks, locking critical records.</li>
+                <li>Many Filipinos have downloaded fake software updates that secretly installed malware on their devices.</li>
+            </ul>
+            <p><strong>Why is it Personal Cybercrime?</strong></p>
+            <ul>
+                <li>✔ Targets individuals' personal devices (laptops, smartphones, home computers).</li>
+                <li>✔ Unlike corporate ransomware attacks, these crimes affect personal files and finances.</li>
+                <li>✔ Victims face financial loss and personal data exposure.</li>
+            </ul>
+            <p><strong>How to Prevent It:</strong></p>
+            <ul>
+                <li>✅ Don’t download software from unknown sources.</li>
+                <li>✅ Use strong antivirus programs and update software regularly.</li>
+            </ul>
+            <p><strong>Where to Report:</strong></p>
+            <ul>
+                <li>📌 DICT Cybersecurity Bureau</li>
+                <li>📌 PNP-ACG</li>
+            </ul>
+          </div>
+
+          <!-- HACKING & UNAUTHORIZED ACCOUNT ACCESS -->
+          <div class="cybercrime-details" id="hacking-unauthorized-account-access">
+            <h2>Hacking & Unauthorized Account Access</h2>
+            <p><strong>What is it?</strong><br>
+                Hacking is the unauthorized access to a person's computer, online account, or device to steal, modify, or misuse personal information.
+            </p>
+            <p><strong>Why is it Personal Cybercrime?</strong></p>
+            <ul>
+                <li>✔ Hackers steal or damage individual accounts (email, social media, banking).</li>
+                <li>✔ Unlike corporate hacking, these attacks do not target a company’s IT system.</li>
+                <li>✔ Personal privacy and security are directly compromised.</li>
+            </ul>
+            <p><strong>How to Prevent It:</strong></p>
+            <ul>
+                <li>✅ Use strong, unique passwords for every account.</li>
+                <li>✅ Enable Two-Factor Authentication (2FA) on social media and banking apps.</li>
+                <li>✅ Avoid logging into accounts on public computers or shared devices.</li>
+            </ul>
+            <p><strong>Where to Report:</strong></p>
+            <ul>
+                <li>📌 PNP Anti-Cybercrime Group (PNP-ACG)</li>
+                <li>📌 NBI Cybercrime Division</li>
+            </ul>
+          </div>
+
+          <!-- CYBERSTALKING & ONLINE HARASSMENT -->
+          <div class="cybercrime-details" id="cyberstalking-online-harassment">
+            <h2>Cyberstalking & Online Harassment</h2>
+            <p><strong>What is it?</strong><br>
+                Cyberstalking is the repeated use of the internet to harass, intimidate, or threaten a person, while online harassment includes cyberbullying, doxxing, and trolling.
+            </p>
+            <p><strong>Why is it Personal Cybercrime?</strong></p>
+            <ul>
+                <li>✔ The harassment affects one individual, not an organization.</li>
+                <li>✔ The intent is to cause emotional distress to the victim.</li>
+                <li>✔ Personal privacy is violated, leading to mental and emotional harm.</li>
+            </ul>
+            <p><strong>How to Prevent It:</strong></p>
+            <ul>
+                <li>✅ Block & report online stalkers on social media platforms.</li>
+                <li>✅ Limit the personal information you share publicly.</li>
+                <li>✅ Strengthen privacy settings on all social media accounts.</li>
+            </ul>
+            <p><strong>Where to Report:</strong></p>
+            <ul>
+                <li>📌 PNP Women and Children Protection Center (WCPC) (if the victim is a woman or child)</li>
+                <li>📌 PNP-ACG (for general cyber harassment cases)</li>
+            </ul>
+          </div>
+
+          <!-- SEXTORTION & REVENGE PORN -->
+          <div class="cybercrime-details" id="sextortion-revenge-porn">
+            <h2>Sextortion & Revenge Porn</h2>
+            <p><strong>What is it?</strong><br>
+                Sextortion happens when criminals threaten to release explicit photos or videos of a victim unless they receive money or personal favors. Revenge porn involves sharing intimate images or videos without the victim’s consent to humiliate or blackmail them.
+            </p>
+            <p><strong>Why is it Personal Cybercrime?</strong></p>
+            <ul>
+                <li>✔ The crime directly targets an individual’s privacy and reputation.</li>
+                <li>✔ The blackmail and emotional distress affect a single victim, not a company or organization.</li>
+                <li>✔ Unlike corporate cybercrimes, sextortion is based on personal relationships and trust violations.</li>
+            </ul>
+            <p><strong>How to Prevent It:</strong></p>
+            <ul>
+                <li>✅ Never share sensitive content online or with untrusted people.</li>
+                <li>✅ Use strong passwords & encryption for cloud storage.</li>
+                <li>✅ If threatened, report immediately and do not engage with blackmailers.</li>
+            </ul>
+            <p><strong>Where to Report:</strong></p>
+            <ul>
+                <li>📌 PNP Women & Children Protection Center (WCPC)</li>
+                <li>📌 NBI Cybercrime Division</li>
+            </ul>
+          </div>
+
+          <!-- ONLINE SHOPPING FRAUD -->
+          <div class="cybercrime-details" id="online-shopping-fraud">
+            <h2>Online Shopping Fraud</h2>
+            <p><strong>What is it?</strong><br>
+                Online shopping fraud happens when scammers set up fake online stores or impersonate sellers to deceive buyers into sending money for non-existent or defective products.
+            </p>
+            <p><strong>Common Types of Online Shopping Fraud:</strong></p>
+            <ul>
+                <li>Fake Online Stores – Fraudsters create websites or social media pages selling products they don’t actually have.</li>
+                <li>Counterfeit Product Scams – Sellers advertise original brands but send cheap knock-offs.</li>
+                <li>Non-Delivery Scams – Buyers pay, but the seller disappears without delivering the item.</li>
+                <li>Payment Redirection Scams – Fraudsters trick buyers into making payments outside secure e-commerce platforms.</li>
+            </ul>
+            <p><strong>Example Scenarios:</strong></p>
+            <ul>
+                <li>Victims of the "COD iPhone Scam" paid for an iPhone but received a box of soap instead.</li>
+                <li>Fake Lazada and Shopee sellers tricked customers into paying for "brand-new" items but sent damaged or non-functional products.</li>
+            </ul>
+            <p><strong>Why is it Personal Cybercrime?</strong></p>
+            <ul>
+                <li>✔ Scammers target individual buyers, not businesses, tricking them into buying fake or non-existent products.</li>
+                <li>✔ The financial loss directly affects the victim, not a company’s financial system.</li>
+                <li>✔ Unlike corporate fraud, these scams exploit personal trust and consumer vulnerability.</li>
+            </ul>
+            <p><strong>How to Prevent It:</strong></p>
+            <ul>
+                <li>✅ Buy from verified sellers on trusted platforms.</li>
+                <li>✅ Use cash-on-delivery (COD) whenever possible.</li>
+                <li>✅ Check seller reviews & ratings before purchasing.</li>
+            </ul>
+            <p><strong>Where to Report:</strong></p>
+            <ul>
+                <li>📌 DTI Fair Trade Enforcement Bureau</li>
+                <li>📌 PNP-ACG (for online payment fraud cases)</li>
+            </ul>
+          </div>
+
+          <!-- FAKE SOCIAL MEDIA PROFILES & CATFISHING -->
+          <div class="cybercrime-details" id="fake-social-media-profiles-catfishing">
+            <h2>Fake Social Media Profiles & Catfishing</h2>
+            <p><strong>What is it?</strong><br>
+                Catfishing is when cybercriminals create fake social media accounts to deceive people into relationships, scams, or fraud.
+            </p>
+            <p><strong>Common Types of Catfishing:</strong></p>
+            <ul>
+                <li>Romance Scams – Fraudsters pose as attractive individuals to build relationships and trick victims into sending money.</li>
+                <li>Fake Business Profiles – Scammers impersonate businesses or influencers to deceive customers.</li>
+                <li>Identity Theft Catfishing – Criminals steal real identities to create convincing fake accounts.</li>
+                <li>Political Manipulation – Fake accounts spread misinformation or manipulate elections.</li>
+            </ul>
+            <p><strong>Example Scenarios:</strong></p>
+            <ul>
+                <li>A Filipina nurse in Dubai lost ₱1 million after falling for a "US soldier" who asked for money to "travel and marry her."</li>
+                <li>A fake influencer account tricked people into sending money for "exclusive coaching services."</li>
+            </ul>
+            <p><strong>Why is it Personal Cybercrime?</strong></p>
+            <ul>
+                <li>✔ The deception is aimed at an individual, often for romance scams, fraud, or manipulation.</li>
+                <li>✔ Unlike corporate impersonation fraud, catfishing is usually for emotional or financial exploitation of a specific person.</li>
+                <li>✔ Victims suffer emotional distress and financial loss.</li>
+            </ul>
+            <p><strong>How to Prevent It:</strong></p>
+            <ul>
+                <li>✅ Do a reverse image search on profile pictures to check for stolen identities.</li>
+                <li>✅ Never send money or personal details to strangers online.</li>
+                <li>✅ Be skeptical of people who refuse video calls or in-person meetings.</li>
+            </ul>
+            <p><strong>Where to Report:</strong></p>
+            <ul>
+                <li>📌 Facebook or Instagram Help Center (for fake profiles)</li>
+                <li>📌 PNP-ACG (for fraud cases linked to catfishing)</li>
+            </ul>
+          </div>
+
+          <!-- ONLINE DEFAMATION & DOXXING -->
+          <div class="cybercrime-details" id="online-defamation-doxxing">
+            <h2>Online Defamation & Doxxing</h2>
+            <p><strong>What is it?</strong><br>
+                Online defamation involves spreading false information about someone to damage their reputation, while doxxing refers to leaking private information online to incite harassment.
+            </p>
+            <p><strong>Common Types of Online Defamation:</strong></p>
+            <ul>
+                <li>False Accusations – Fake news or rumors are spread to ruin someone’s reputation.</li>
+                <li>Leaked Private Conversations – Personal messages are shared publicly to embarrass the victim.</li>
+                <li>Doxxing – Private data like addresses, phone numbers, or workplace details are leaked online.</li>
+                <li>Edited Images & Videos – Manipulated media is used to misrepresent victims.</li>
+            </ul>
+            <p><strong>Example Scenarios:</strong></p>
+            <ul>
+                <li>A local politician was targeted by fake news claiming they were involved in corruption.</li>
+                <li>A student’s home address was leaked online, leading to harassment from strangers.</li>
+            </ul>
+            <p><strong>Why is it Personal Cybercrime?</strong></p>
+            <ul>
+                <li>✔ The harm is directed at an individual’s reputation.</li>
+                <li>✔ Unlike business-related defamation, this type of cybercrime involves false accusations, rumors, or leaks of personal information.</li>
+            </ul>
+            <p><strong>How to Prevent It:</strong></p>
+            <ul>
+                <li>✅ Report false content to platform moderators (Facebook, Twitter, YouTube).</li>
+                <li>✅ Monitor your digital footprint and remove sensitive data online.</li>
+                <li>✅ Seek legal action if defamation leads to serious consequences.</li>
+            </ul>
+            <p><strong>Where to Report:</strong></p>
+            <ul>
+                <li>📌 PNP-ACG (for cyber harassment cases)</li>
+                <li>📌 Department of Justice (DOJ) – for libel & cyber libel cases</li>
+            </ul>
+          </div>
+
+          <!-- CHILD EXPLOITATION & GROOMING -->
+          <div class="cybercrime-details" id="child-exploitation-grooming">
+            <h2>Child Exploitation & Grooming</h2>
+            <p><strong>What is it?</strong><br>
+                Child exploitation happens when criminals use the internet to manipulate minors into inappropriate actions, while grooming refers to building trust with minors for abuse.
+            </p>
+            <p><strong>Common Types of Child Exploitation in the Philippines:</strong></p>
+            <ul>
+                <li>Online Sexual Exploitation of Children (OSEC) – Criminals force minors into inappropriate acts for live-streamed abuse.</li>
+                <li>Grooming on Social Media – Predators contact minors pretending to be friends.</li>
+                <li>Child Trafficking Networks – Dark web groups trade child exploitation materials.</li>
+            </ul>
+            <p><strong>Example Scenario:</strong></p>
+            <ul>
+                <li>The Philippines is a global hotspot for OSEC, with many cases involving foreign predators paying Filipinos to exploit children online.</li>
+            </ul>
+            <p><strong>Why is it Personal Cybercrime?</strong></p>
+            <ul>
+                <li>✔ The crime directly harms a minor on a personal level.</li>
+                <li>✔ Predators manipulate and exploit children, making it a highly personal and psychological crime.</li>
+                <li>✔ Unlike corporate cybercrimes, this involves private interactions between criminals and victims.</li>
+            </ul>
+            <p><strong>How to Prevent It:</strong></p>
+            <ul>
+                <li>✅ Monitor children’s online activity and educate them about online dangers.</li>
+                <li>✅ Report suspicious messages or online predators immediately.</li>
+            </ul>
+            <p><strong>Where to Report:</strong></p>
+            <ul>
+                <li>📌 PNP-WCPC (Women & Children Protection Center)</li>
+                <li>📌 NBI Cybercrime Division</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -329,7 +751,10 @@
       <script src="../scripts/navbarmenu.js"> 
       </script>
 
-      
+      <script src="../scripts/cybercrime-modal.js"> 
+      </script>
+
+
       <!-- Chatbot Toggle Animation -->
       <script>
             function toggleChatbox() {
