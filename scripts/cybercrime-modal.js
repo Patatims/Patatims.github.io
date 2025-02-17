@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cybercrimeData = {
         personal: {
             title: "Personal Cybercrimes",
-            description: "Cybercrimes that target individuals, affecting their privacy, finances, and security.",
+            description: "Personal cybercrime refers to digital crimes that directly target individuals, affecting their finances, personal security, privacy, or reputation. These crimes often involve identity theft, scams, financial fraud, harassment, hacking, and data breaches that impact an individual rather than a business or government entity.",
             crimes: [
                 { type: "scams-online-fraud", name: "Scams & Online Fraud" },
                 { type: "financial-fraud", name: "Financial Fraud" },
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
             government: {
                 title: "Government & Critical Infrastructure Cybercrimes",
-                description: "Cybercrimes that target government institutions, critical infrastructure, and national security.",
+                description: "Government & Critical Infrastructure Cybercrimes target government systems, public services, and national security rather than individuals or businesses. These cybercrimes can have large-scale consequences, including data breaches, infrastructure disruptions, election interference, and cyber espionage.",
                 crimes: [
                     { type: "cyberterrorism", name: "Cyberterrorism" },
                     { type: "cyberwarfare", name: "Cyberwarfare & Espionage" },
@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             corporate: {
                 title: "Corporate & Business Cybercrimes",
-                description: "Cybercrimes that impact businesses, corporations, and economic operations.",
+                description: "Corporate & Business Cybercrimes target companies, financial institutions, and industries, often leading to financial losses, data breaches, or business disruptions. Unlike personal cybercrimes, these attacks typically focus on stealing corporate secrets, extorting businesses, or damaging a company’s reputation.",
                 crimes: [
-                    { type: "bec-fraud", name: "Business Email Compromise (BEC) & CEO Fraud" },
+                    { type: "bec-fraud", name: "Business Email Compromise (BEC)" },
                     { type: "corporate-espionage", name: "Corporate Espionage (Trade Secrets Theft)" },
                     { type: "ransomware-business", name: "Ransomware Attacks on Businesses" },
                     { type: "insider-threats", name: "Insider Threats & Employee Data Leaks" },
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             emerging: {
                 title: "Emerging Cybercrime Threats",
-                description: "New and evolving cyber threats using advanced technologies.",
+                description: "As technology advances, cybercriminals develop new methods to exploit digital vulnerabilities. These emerging threats are not yet as common as traditional cybercrimes but are rapidly evolving and will likely become major risks in the future.",
                 crimes: [
                     { type: "ai-cybercrime", name: "AI-Powered Cybercrime (Deepfakes & AI Phishing)" },
                     { type: "metaverse-crime", name: "Cybercrime in the Metaverse & Virtual Worlds" },
