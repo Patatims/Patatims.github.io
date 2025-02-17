@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalGrid = document.getElementById("modal-grid");
     const secondModal = document.getElementById("cybercrime-second-modal");
 
-    // 🔹 All Cybercrime Categories and Their Sub-Crimes
+    // All Cybercrime Categories and Their Sub-Crimes
     const cybercrimeData = {
         personal: {
             title: "Personal Cybercrimes",
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     { type: "bec-fraud", name: "Business Email Compromise (BEC)" },
                     { type: "corporate-espionage", name: "Corporate Espionage (Trade Secrets Theft)" },
                     { type: "ransomware-business", name: "Ransomware Attacks on Businesses" },
-                    { type: "insider-threats", name: "Insider Threats & Employee Data Leaks" },
+                    { type: "insider-threat", name: "Insider Threats & Employee Data Leaks" },
                     { type: "ddos-attacks", name: "Distributed Denial of Service (DDoS) Attacks" },
                     { type: "supply-chain", name: "Supply Chain Cyber Attacks" }
                 ]
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         };
 
-    // 🔹 First Modal (Cybercrime List)
+    // First Modal (Cybercrime List)
     guideWrappers.forEach(wrapper => {
         wrapper.addEventListener("click", function () {
             const type = this.dataset.type;
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 🔹 Open Second Modal (Hardcoded Content)
+    //  Open Second Modal (Hardcoded Content)
     function openSecondModal(crimeType) {
         // Hide all cybercrime details
         document.querySelectorAll(".cybercrime-details").forEach(detail => {
@@ -111,14 +111,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // 🔹 Close Second Modal when clicking outside the content
+    // Close Second Modal when clicking outside the content
     secondModal.addEventListener("click", function (event) {
         if (!event.target.closest(".modal-content")) {
             secondModal.style.display = "none";
         }
     });
 
-    // 🔹 Close First Modal when clicking outside the content
+    // Close First Modal when clicking outside the content
     modal.addEventListener("click", function (event) {
         if (!event.target.closest(".modal-content")) {
             modal.classList.remove("active");

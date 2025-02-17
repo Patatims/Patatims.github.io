@@ -557,16 +557,17 @@ body {
   padding: 20px;
 }
 
+/* Activate modal */
 .cybercrime-modal.active {
   display: flex;
 }
 
-/* 🔹 Second Modal Content Box */
+/*  Second Modal Content Box */
 .modal-content {
   background: white;
   width: 850px;
   max-width: 95%;
-  padding: 25px;
+  padding: 35px; /* More padding for breathing space */
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: left;
@@ -575,15 +576,27 @@ body {
   max-height: 90vh;
 }
 
+/* Add smooth scrolling inside modal */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
 
+.modal-content::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 10px;
+}
 
-/* 🔹 Second Modal: Fix Alignment */
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Cybercrime container: Improves structure */
 .cybercrime-container {
   width: 100%;
   padding: 10px 20px;
 }
 
-/* 🔹 Cybercrime Details: Ensure Proper Display */
+/* Cybercrime Details: Ensure Proper Display */
 .cybercrime-details {
   display: none;
   flex-direction: column;
@@ -594,32 +607,35 @@ body {
   display: flex;
 }
 
-/* 🔹 Title Styling */
+/* Improved title styling */
 .cybercrime-details h2 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: #222;
   text-align: left;
   font-weight: bold;
   margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
 }
 
-/* 🔹 Section Headers */
+/* Section Headers */
 .cybercrime-details strong {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-top: 20px;
+  color: #111;
 }
 
-/* 🔹 Paragraph Spacing */
+/* Paragraph spacing */
 .cybercrime-details p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #333;
-  line-height: 1.6;
-  margin-bottom: 10px;
+  line-height: 1.7;
+  margin-bottom: 15px;
 }
 
-/* 🔹 Fix Bullet Point Styling */
+/* Improved bullet points */
 .cybercrime-details ul {
   margin-left: 20px;
   padding-left: 20px;
@@ -632,25 +648,36 @@ body {
   color: #444;
 }
 
-/* 🔹 Fix Alignment of Icons (if any) */
+/* Add subtle dividers between sections */
+.cybercrime-details .section-divider {
+  margin: 25px 0;
+  border-top: 2px solid #eee;
+  padding-top: 15px;
+}
+
+/* Highlight important sections */
+.cybercrime-details .highlight-section {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix Alignment of Icons (if any) */
 .cybercrime-details ul li span {
   margin-right: 5px;
   font-size: 1.2rem;
 }
 
-/* 🔹 Section Spacing */
+/* Section Spacing */
 .cybercrime-details .section {
   margin-bottom: 20px;
 }
 
-/* 🔹 Remove Close Button */
-.close-second-modal {
-  display: none;
-  visibility: hidden;
-}
 
 /* ========================================
-   🔹 First Modal (Cybercrime List)
+      First Modal (Cybercrime List)
 ======================================== */
 
 .modal-grid {
@@ -679,6 +706,12 @@ body {
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  display: flex; /* Enables centering */
+  align-items: center; /* Vertically centers text */
+  justify-content: center; /* Horizontally centers text */
+  min-height: 60px; /* Ensures even spacing */
+  font-size: 1.1rem; /* Adjust text size for better visibility */
+  font-weight: bold; /* Makes text more readable */
 }
 
 .cybercrime-card:hover {
