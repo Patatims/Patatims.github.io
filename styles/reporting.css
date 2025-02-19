@@ -956,17 +956,18 @@ body {
   text-align: center;
 }
 
-/* Report Table */
-#report-details {
+.report-details {
   width: 100%;
-  margin-top: 20px;
   overflow-x: auto;
-
+  -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on mobile */
 }
 
+/* Report Table */
 #report-details table {
   width: 100%;
   border-collapse: collapse;
+  white-space: nowrap; /* Prevents text wrapping */
+  min-width: 600px; /* Prevents columns from squishing on small screens */
 }
 
 #report-details th {
@@ -981,10 +982,10 @@ body {
   padding: 10px;
 }
 
+
 #report-details tr:nth-child(even) {
   background: #f2f2f2;
 }
-
 
 /* Data Disclaimer Notice */
 .data-disclaimer {
@@ -1432,6 +1433,53 @@ body {
     font-size: 1.1rem;
   }
 
+  #report-details {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  #report-details table {
+    min-width: 100%;
+  }
+
+  /* Force table to fit within screen */
+  #report-details th, #report-details td {
+    padding: 8px;
+    font-size: 0.9rem;
+    white-space: wrap; 
+  }
+
+  .report-cybercrime h2 {
+    font-size: 2rem;
+  }
+
+  .report-guide {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .report-guide ol {
+    padding-left: 15px;
+  }
+
+  .cybercrime-selection select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .what-to-do {
+    width: 100%;
+  }
+
+  .what-to-do h3 {
+    font-size: 1.5rem;
+  }
+
+  .warning-box {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
   .chatbot-widget {
     display: none;
   }
@@ -1579,4 +1627,40 @@ body {
   .cybercrime-guides p {
     font-size: 1rem;
   }
+
+  .report-cybercrime h2 {
+    font-size: 1.8rem;
+  }
+
+  .report-guide ol li {
+    font-size: 0.9rem;
+  }
+
+  .cybercrime-selection select {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .what-to-do h3 {
+    font-size: 1.3rem;
+  }
+
+  .warning-box {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  #report-details table {
+    min-width: 100%;
+  }
+
+  .data-disclaimer {
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 10px;
+  }
+      
 }
