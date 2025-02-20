@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   
     <!-- CSS  -->
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/resourcehub.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/footer.css">
   </head>
@@ -42,9 +42,27 @@
   </header>
 
 
-  <!-- Main Content -->
+      <div class="helpcenter-container">
+        <!-- Sidebar Menu -->
+        <nav class="sidebar">
+            <h3>Resource Hub</h3>
+            <ul>
+                <li><button class="menu-btn" data-content="about">About</button></li>
+                <li><button class="menu-btn" data-content="offline">Offline</button></li>
+                <li><button class="menu-btn" data-content="news">News</button></li>
+                <li><button class="menu-btn" data-content="articles">Articles</button></li>
+                <li><button class="menu-btn" data-content="projects">Projects</button></li>
+                <li><button class="menu-btn" data-content="pnp-acg">PNP-ACG Branches</button></li>
+            </ul>
+        </nav>
 
-
+        <!-- Main Content Area -->
+        <div class="content">
+            <h2 id="content-title">Welcome to the Help Center</h2>
+            <hr>
+            <p id="content-text">Select a section from the menu to view its details.</p>
+        </div>
+    </div>
 
   
   <!-- Footer -->
@@ -123,6 +141,9 @@
       </div>
   
       <!-- JavaScript -->
+
+      <script src="../scripts/resourcehub.js"></script>
+
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           const menuToggle = document.querySelector(".menu-toggle");
