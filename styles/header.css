@@ -1,33 +1,36 @@
 /* Navbar Styles */
 .navbar {
-  position: fixed; /* Fixes navbar to the top */
+  position: fixed; /* Fix navbar to the top */
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(244, 244, 244, 0.99); /* Semi-transparent effect */
+  background: rgba(244, 244, 244, 0.98); /* Light background */
   padding: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000; /* Ensures navbar stays above other elements */
   transition: background 0.4s ease-in-out, padding 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  border-bottom: 2px solid rgba(0, 120, 255, 0.2); /* Thin bottom border */
 }
 
 /* Navbar when scrolled */
 .navbar.scrolled {
-  background: rgba(244, 244, 244, 1); /* Fully opaque when scrolled */
-  padding: 0.5rem 0; /* Slightly reduces padding */
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); /* Increases shadow */
+  background: rgba(244, 244, 244, 1);
+  padding: 0.5rem 0;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); /* Increased shadow */
 }
 
+/* Ensure body padding matches navbar height */
 body {
-  padding-top: 70px; /* Adjust this based on your navbar's height */
+  padding-top: 70px; 
 }
 
 /* Navbar container */
 .navbar .container {
   display: flex;
-  justify-content: center; /* Centers nav-links */
+  justify-content: center;
   align-items: center;
   width: 100%;
   position: relative;
@@ -36,27 +39,27 @@ body {
 /* LOGO - Moves to the left */
 .navbar .logo {
   position: absolute;
-  left: 1rem; /* Keeps it near the left edge */
+  left: 1rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
 }
 
-/* Logo Styles */
+/* Logo Styling */
 .navbar .logo img {
   display: block;
-  max-height: 35px;
+  max-height: 40px;
 }
 
 /* Centering nav-links */
 .nav-links {
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
-  font-weight: 450;
+  font-weight: 500;
   list-style: none;
   display: flex;
-  justify-content: space-between; /* Center horizontally */
+  justify-content: space-between;
   padding: .4rem 0;
   margin: 0 auto 0 2rem;
 }
@@ -64,6 +67,7 @@ body {
 /* Adjust spacing between nav items */
 .nav-links li {
   margin: 0 1.5rem;
+  position: relative;
 }
 
 /* Navbar link styles */
@@ -71,6 +75,30 @@ body {
   text-decoration: none;
   color: #333;
   font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Sliding Underline Effect */
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: #0078ff; /* Underline color */
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-links a:hover {
+  color: #0078ff; /* Change text color on hover */
 }
 
 /* Mobile menu button */
@@ -82,33 +110,23 @@ body {
   color: #333;
   cursor: pointer;
   margin-right: 20px;
-  position: relative; /* Ensure it stays in place */
-  z-index: 1001; /* Ensure it's above everything */
+  position: relative;
+  z-index: 1001;
   margin-left: 2rem;
 }
 
-/* 🔹 Mobile & Tablet Fix */
+/* 🔹 Mobile & Tablet Navbar Fix */
 @media (max-width: 1024px) {
-
   .menu-toggle {
     display: block;
   }
 
   .navbar .container {
-    justify-content: space-between; /* Ensures spacing */
-  }
-
-  /* LOGO - Remove absolute positioning when zoomed in/mobile */
-  .navbar .logo {
-    position: relative;
-    left: auto;
-    transform: none;
-    text-align: center;
-    width: 100%;
+    justify-content: space-between;
   }
 
   .nav-links {
-    visibility: hidden; /* Prevent overlap */
+    visibility: hidden;
     opacity: 0;
     flex-direction: column;
     width: 100%;
@@ -123,7 +141,7 @@ body {
     z-index: 999;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   }
-  
+
   .nav-links.show {
     visibility: visible;
     opacity: 1;
@@ -136,15 +154,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  /* LOGO - Stays left in desktop */
-  .navbar .logo {
-    position: absolute;
-    left: 1rem;
-    transform: translateY(-50%);
-    text-align: left;
-    width: auto;
   }
 
   .nav-links {
@@ -162,92 +171,5 @@ body {
 
   .nav-links a {
     font-size: 1rem;
-  }
-}
-
-/* Mobile Navbar (Max Width: 768px) */
-@media (max-width: 768px) {
-  .navbar {
-    position: fixed; /* Makes navbar stay while scrolling */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(244, 244, 244, 0.98); /* Light background with slight transparency */
-    z-index: 1000;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease-in-out;
-  }
-
-  /* Add padding so content doesn't get hidden under navbar */
-  body {
-    padding-top: 110px; /* Adjust this based on navbar height */
-  }
-
-  .navbar .container {
-    flex-direction: column; /* Stacks elements */
-    align-items: center; /* Centers logo */
-    justify-content: center;
-    text-align: center;
-  }
-
-  /* Center the logo at mobile device */
-  .navbar .logo {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 0.5rem; /* Adds spacing */
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #333;
-    cursor: pointer;
-    margin-top: -5px; /* Adjust positioning */
-  }
-
-  /* Mobile nav links */
-  .nav-links {
-    visibility: hidden;
-    opacity: 0;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    background: #f4f4f4;
-    position: absolute;
-    top: 100%; /* Ensures it appears below navbar */
-    left: 0;
-    padding: 1rem 0;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-  }
-
-  /* Show animation */
-  .nav-links.show {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .nav-links li {
-    margin: 1rem 0;
-    text-align: center;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
-    display: block;
-    padding: 0.5rem;
-  }
-
-  /* LOGO - Center in mobile */
-  .navbar .logo {
-    position: relative;
-    left: auto;
-    transform: none;
-    text-align: center;
-    width: 100%;
   }
 }

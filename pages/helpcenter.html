@@ -42,27 +42,25 @@
   </header>
 
 
-      <div class="helpcenter-container">
-        <!-- Sidebar Menu -->
-        <nav class="sidebar">
-            <h3>Resource Hub</h3>
-            <ul>
-                <li><button class="menu-btn" data-content="about">About</button></li>
-                <li><button class="menu-btn" data-content="offline">Offline</button></li>
-                <li><button class="menu-btn" data-content="news">News</button></li>
-                <li><button class="menu-btn" data-content="articles">Articles</button></li>
-                <li><button class="menu-btn" data-content="projects">Projects</button></li>
-                <li><button class="menu-btn" data-content="pnp-acg">PNP-ACG Branches</button></li>
-            </ul>
-        </nav>
+    <div class="helpcenter-container">
+      <!-- Sidebar Menu -->
+      <nav class="sidebar">
+          <h3>Resource Hub</h3>
+          <ul>
+              <li><button id="pnp-acg" class="menu-btn" data-content="pnp-acg">PNP-ACG Branches</button></li>
+              <li><button id="devcontacts" class="menu-btn" data-content="devcontacts">Developer Team Contacts</button></li>
+              <li><button id="offline" class="menu-btn" data-content="offline">Offline Resource</button></li>
+              <li><button id="projects" class="menu-btn" data-content="projects">Projects</button></li>
+          </ul>
+      </nav>
 
-        <!-- Main Content Area -->
-        <div class="content">
-            <h2 id="content-title">Welcome to the Help Center</h2>
-            <hr>
-            <p id="content-text">Select a section from the menu to view its details.</p>
-        </div>
-    </div>
+      <!-- Main Content Area -->
+      <div class="content">
+          <h2 id="content-title">Welcome to the Resource Hub</h2>
+          <p id="content-text">Select a section from the side-menu to view the details.</p>
+          <div id="dynamic-content"></div> <!-- New container for downloadable files -->
+      </div>
+  </div>
 
   
   <!-- Footer -->
@@ -80,21 +78,19 @@
       <div class="footer-column">
         <h3>Support</h3>
         <ul>
-          <li><a href="#">PNP Branches</a></li>
-          <li><a href="#">Developer Team Contacts</a></li>
-          <li><a href="#">Downloadable Material</a></li>
+          <li><a href="helpcenter.html#pnp-acg" target="_blank">PNP-ACG Branches</a></li>
+          <li><a href="helpcenter.html#devcontacts" target="_blank">Developer Team Contacts</a></li>
+          <li><a href="helpcenter.html#offline" target="_blank">Downloadable Material</a></li>
           <li><a href="https://www.facebook.com/messages/t/880299735387855" target="_blank">Direct Message PNP-ACG</a></li>
           <li><a href="https://www.facebook.com/anticybercrimegroup" target="_blank"> ACG Social Media Link</a></li>
         </ul>
       </div>
 
-      <div class="logo">
-        <a href="../index.html"><img src="../logo/logo2.png" alt="ClickSmart"></a>
-      </div>
+
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p><a href="#">Privacy Policy</a> | &copy; 2024 ClickSmart. All Rights Reserved. | <a href="#">Terms of Use</a></p>
+        <p>&copy; 2024 ClickSmart. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
@@ -142,20 +138,16 @@
   
       <!-- JavaScript -->
 
+      <!-- Sidebar JS-->
       <script src="../scripts/resourcehub.js"></script>
 
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const menuToggle = document.querySelector(".menu-toggle");
-          const navLinks = document.querySelector(".nav-links");
-  
-          menuToggle.addEventListener("click", function () {
-            navLinks.classList.toggle("show"); // Toggle visibility
-          });
-        });
+      <!-- Menu Toggle-->
+      <script src="../scripts/navbarmenu.js"> 
       </script>
-  
-       <script>
+
+
+      <!-- Chatbot-->
+      <script>
           function toggleChatbox() {
         var chatbox = document.getElementById("chatbox");
         if (chatbox.style.display === "none" || chatbox.style.display === "") {
@@ -164,10 +156,25 @@
             chatbox.style.display = "none"; // Hide Chatbox
           }
         }
-        function toggleChatbot() {
-            alert("Chatbot feature coming soon!"); // Replace this with actual chatbot code
-        }
       </script>
+
+      <script src="../scripts/chatbot.js"></script>
+
+
+      <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check if URL has a fragment (e.g., #pnp-acg)
+        const section = window.location.hash.substring(1); // Remove the "#" symbol
+    
+        // If a valid section exists, trigger the corresponding button click
+        if (section) {
+            const button = document.getElementById(section);
+            if (button) {
+                button.click();
+            }
+        }
+    });
+    </script>
 
 </body>
 
